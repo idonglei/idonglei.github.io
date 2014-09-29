@@ -1,6 +1,6 @@
 markdown: rdiscount
 highlighter: true
-permalink: /:year/:month/:day/:title.html
+permalink: /:year/:month/:title.html
 name: "DongLei's Blog"
 markdown: rdiscount
 

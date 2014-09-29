@@ -1,8 +1,8 @@
 ---
-title: 博客写作一周年记
+title: Blog One Year | 博客写作一周年记
 layout: post
 tags:
-  - essay
+  - Essay
 
 ---
 

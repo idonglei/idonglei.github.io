@@ -4,7 +4,7 @@
  <title>DongLei's Blog</title>
  <link href="http://donglei.name/atom.xml" rel="self"/>
  <link href="http://donglei.name"/>
- <updated>2014-09-29T10:27:40+08:00</updated>
+ <updated>2014-09-29T11:37:31+08:00</updated>
  <id>http://donglei.name</id>
  <author>
    <name>donglei</name>
@@ -12,10 +12,10 @@
 
  
  <entry>
-   <title>博客写作一周年记</title>
-   <link href="http://donglei.name/2014/09/28/blog-one-year.html"/>
+   <title>Blog One Year | 博客写作一周年记</title>
+   <link href="http://donglei.name/2014/09/blog-one-year.html"/>
    <updated>2014-09-28T00:00:00+08:00</updated>
-   <id>http://donglei.name/2014/09/28/blog-one-year</id>
+   <id>http://donglei.name/2014/09/blog-one-year</id>
    <content type="html">&lt;p&gt;这周收到了服务器运营商发的邮件，提示要交费了，也意味着这个博客到现在已经活了一年。且来盘点一下这一年写过的东西：&lt;/p&gt;
 
 &lt;p&gt;算上这篇总结，这一年共写了40篇，大约有五六万字，并不多，离一周一篇的设想完成度只有80%左右。主要原因还是懶，像关于可视化，关于python在社会科学中应用还是有很多可写的，书评也应增加比重，《众病之王》就很值得写上一笔。“我们绝大多数人的问题，归结到最后，就是一懒，二拖，三不肯读书，如此而已。”&lt;/p&gt;
@@ -33,10 +33,179 @@
  </entry>
  
  <entry>
+   <title>Raw Data from Figures | 从图片中提取数据</title>
+   <link href="http://donglei.name/2014/09/raw-data-from-figures.html"/>
+   <updated>2014-09-05T00:00:00+08:00</updated>
+   <id>http://donglei.name/2014/09/raw-data-from-figures</id>
+   <content type="html">&lt;p&gt;有时候我们经常会在文献中看到许多图表，特别是一些表示两个变量关系的散点图，但作者往往不一定提供原始数据，我们当然可以想办法联系作者获取原始数据，但有时候这样不但成功率不高，而且像一些早年的文献，可能作者无法联系，甚至原始数据已经无法获得了。&lt;/p&gt;
+
+&lt;p&gt;那么有什么办法么？今天看到Wu Lingfei写了一个文章，讲“摄影法”求原始数据，说白了就是拍（或扫描）一张无透视的图片，稍加处理便可得到其相对准确的原始数据。我在这里改良了一下原始方法，发挥建院同学的优势，可以前期用PS辅助处理一下，以增加准确度。&lt;/p&gt;
+
+&lt;h3&gt;STEP 1：拍照&lt;/h3&gt;
+
+&lt;p&gt;figure&lt;/p&gt;
+
+&lt;p&gt;这是原文作者用手机拍的一张照片，虽然说手机也可以有不错的拍照效果，但难免会有透视，而且数据点清晰度低的话可能会影响后一步处理，如果可能的话建立试试扫描仪。&lt;/p&gt;
+
+&lt;h3&gt;STEP 2：预处理&lt;/h3&gt;
+
+&lt;p&gt;figure1&lt;/p&gt;
+
+&lt;p&gt;将图片在PS里先剪裁一下，大小需要正好剪裁到坐标轴边框；接着调整成阈值模式，再进一步其实可以单独用画笔点一下数据点，因为“粘连”在一起的数据点到后面计算机是没法分开的。&lt;/p&gt;
+
+&lt;p&gt;下面的工作就交给计算机啦。&lt;/p&gt;
+
+&lt;h3&gt;STEP 3：用Python的包识别出点的组团&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
+import numpy as np #数组
+import matplotlib.pyplot as plt #画图
+from scipy import ndimage #核心！图片处理
+from scipy.ndimage import measurements
+
+j = ndimage.imread(&quot;/Users/mac/Desktop/figure1.jpg&quot;)
+#j是一个y行，x列的array
+
+b = ndimage.gaussian_filter(j,4)
+#用高斯法处理图片，得到点的cluster
+
+c,d = ndimage.label(b&amp;lt;50)
+#给cluster打上标签，后面b的值是个阈值，可调节
+im = plt.imshow(c)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;figure2&lt;/p&gt;
+
+&lt;h3&gt;STEP 4：画出所有Cluster，并存下中心点的数据&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sliced = measurements.find_objects(c)
+#Find objects in a labeled array. Find points in this example
+
+data=[]
+for i in sliced:
+    sliceX = i[1]
+    sliceY = i[0]
+    #注意，X,Y的坐标是反的
+    x = np.abs(sliceX.stop - sliceX.start)/2 + min(sliceX.stop,sliceX.start) #point center x
+    y = np.abs(sliceY.stop - sliceY.start)/2 + min(sliceY.stop,sliceY.start) #point center y
+    xlim = [0,len(j[0])]
+    ylim = [len(j),0]
+    data.append([x,ylim[0]-y]) #换一下y的坐标
+    plt.plot([sliceX.start, sliceX.start, sliceX.stop, sliceX.stop, sliceX.start], \
+                   [sliceY.start, sliceY.stop, sliceY.stop, sliceY.start, sliceY.start], \
+                   color=&quot;c&quot;)
+
+plt.xlim(xlim)
+plt.ylim(ylim)
+plt.imshow(c)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;figure3&lt;/p&gt;
+
+&lt;h3&gt;STEP 5：对数据结合原坐标轴进行变换，得到真实数据&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;xlim_org = [0,0.3]
+ylim_org = [1000,3000]
+x = []
+y = []
+#xlim_org,ylim_org是图片上的坐标轴，x,y用来存点的x坐标和y坐标
+
+for k in range(len(data)):
+    data[k][0] *= (0.3/len(j[0]))
+    data[k][1] = data[k][1] * 2000/len(j) + 1000
+    x.append(data[k][0])
+    y.append(data[k][1])
+
+plt.xlim(xlim_org)
+plt.ylim(ylim_org)
+plt.scatter(x, y ,c=&#39;blue&#39;, s=50, alpha=0.8)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;figure4&lt;/p&gt;
+
+&lt;p&gt;是不是很像呢？data这个list里存的就是点的真实坐标了，因为有些Cluster这种简单的方法识别还是不太好，可以进一步处理，点不多的情况下也可以在之前PS的时候调整好。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Grapefruit | 买柚子风波</title>
+   <link href="http://donglei.name/2014/08/grapefruit.html"/>
+   <updated>2014-08-14T00:00:00+08:00</updated>
+   <id>http://donglei.name/2014/08/grapefruit</id>
+   <content type="html">&lt;p&gt;半年多前在人人上写了个小文，现在准备把之前写的东西好玩的，有存档必要的，逐步迁移到博客上。去社交化，Oh YEAR～&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;今天买柚子的故事很是值得记上一笔。&lt;/p&gt;
+
+&lt;p&gt;平时买水果都去照澜院，价格虽然高了点，但吃着比较放心。 今天回宿舍时不知哪根筋错位，刚好路过西区浴室边的水果店，决定在此买点水果，称了一个柚子、几个橙子和香蕉，就是这只柚子引出了后面的波折。&lt;/p&gt;
+
+&lt;p&gt;当时光线比较暗，我随便拿了一个，回到宿舍切开一吃，发现有小四分之一特别特别苦涩。平时柚子也常吃，但像这次苦到没法吃还直没遇到过，看了一眼这块的柚子皮，发现可能跌过。给平时苦就苦吧，大不了不吃了，但怪就怪今天回宿舍早，鬼使神差地拿起柚子下楼去跟老板换。以下为对话部分：&lt;/p&gt;
+
+&lt;p&gt;“老板，这个柚子有点问题，这块可能坏了，特别苦，能给换一个么。”&lt;/p&gt;
+
+&lt;p&gt;“苦是正常的，苦不给换，坏了才能换。”&lt;/p&gt;
+
+&lt;p&gt;“啥样的算坏的？”&lt;/p&gt;
+
+&lt;p&gt;老板从桌子下面拿出一个长了毛的都看不出是否是柚子的东西，说：“这样的是坏的。”&lt;/p&gt;
+
+&lt;p&gt;我：“这样明显看出坏的人们也不会买啊。”&lt;/p&gt;
+
+&lt;p&gt;老板：“柚子就是苦，苦才去火，苦瓜为啥去火，就是因为苦。有的人还喜欢吃苦的呢。”&lt;/p&gt;
+
+&lt;p&gt;我：“要不我们让别的人尝尝看是不是有问题。” 我拉了一个想买柚子的同学A，同学A吃完说苦，没买，骑车离开。&lt;/p&gt;
+
+&lt;p&gt;我：“你看，这个同学也说苦，都没买。”&lt;/p&gt;
+
+&lt;p&gt;老板：“那个同学是说苦，但没说坏了啊。你们这代人就是自私，不为别人着想，要是我，吃到这种情况，肯定不找人家换。我们挣钱容易么。”&lt;/p&gt;
+
+&lt;p&gt;我：“我买个柚子，就质量说质量，与我们这代人有什么关系？” 我拉了个同学B，同学B说确实比平时的苦。&lt;/p&gt;
+
+&lt;p&gt;我：“你看，又一个同学说苦。”&lt;/p&gt;
+
+&lt;p&gt;老板：“这个同学是说苦，但没说坏了啊，药还是苦的呢，你不也得吃啊。”&lt;/p&gt;
+
+&lt;p&gt;我：“我想换一个。”&lt;/p&gt;
+
+&lt;p&gt;老板：“我给你换了，谁给我换啊。给你两块钱，算我赔，把苦切了拿回去吃吧。”&lt;/p&gt;
+
+&lt;p&gt;我：“我想换一个。” 我又拉了个同学C，同学C说确实苦，建议老板想个折中的办法。&lt;/p&gt;
+
+&lt;p&gt;我：“这样吧，你给我再拿一个柚子，如果不是特别苦，我还付钱拿走。”&lt;/p&gt;
+
+&lt;p&gt;老板：“我可没有那个把握，万一苦的，我不就赔了。”&lt;/p&gt;
+
+&lt;p&gt;最后在我再三坚持下切了一个，没问题，我付了钱。话题又回到买的第一个柚子。&lt;/p&gt;
+
+&lt;p&gt;我：“老板，如果我买了一袋苹果，里面有一个坏的，给换不给换？&quot;&lt;/p&gt;
+
+&lt;p&gt;老板：“如果是我，我就不去找别人换。”&lt;/p&gt;
+
+&lt;p&gt;我：“我买了一袋，吃出一个苹果里面坏了，你给不给换？”&lt;/p&gt;
+
+&lt;p&gt;老板：“一袋苹果里面有一个坏了不很正常么，你找谁谁给你换？”&lt;/p&gt;
+
+&lt;p&gt;我：“如果有好几个芯儿有问题呢。”&lt;/p&gt;
+
+&lt;p&gt;老板：“你都吃到芯儿了谁还给你换？让我我就吃了，你们这代人没吃过苦。”&lt;/p&gt;
+
+&lt;p&gt;我：“就是说吃到坏的算自己倒霉是么？”&lt;/p&gt;
+
+&lt;p&gt;老板：“你买的柚子，说什么苹果。”&lt;/p&gt;
+
+&lt;p&gt;我：。。。。。。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Doves | 梁朝伟喂鸽子</title>
-   <link href="http://donglei.name/2014/08/13/doves.html"/>
+   <link href="http://donglei.name/2014/08/doves.html"/>
    <updated>2014-08-13T00:00:00+08:00</updated>
-   <id>http://donglei.name/2014/08/13/doves</id>
+   <id>http://donglei.name/2014/08/doves</id>
    <content type="html">&lt;p&gt;最近有个好玩儿的事情，起因是这样的。网上有许多“恶搞”物理题目表述，比如这个：&lt;/p&gt;
 
 &lt;p&gt;在一个烟雨蒙蒙的清晨，你站在窗前，感慨万千,曾经失落过，但一切的曾经代替不了现在的行走，活在当下，曾经终究不是未来，水一滴一滴从屋檐自由落下，你的思绪也随它荡漾开来，突然发现当它通过屋檐下高为1.4m的窗户时，用时0.2s，空气阻力不计，取g=10m/s2。求此窗户离屋檐的距离。&lt;/p&gt;
@@ -85,6 +254,169 @@ while t &amp;lt; 10000 and len(doves) &amp;gt;= 2:
 print &quot;The total time is:&quot;, t 
 print &quot;The last dove is:&quot;, doves
 &lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The Three Body | 三体</title>
+   <link href="http://donglei.name/2014/08/the-three-body.html"/>
+   <updated>2014-08-03T00:00:00+08:00</updated>
+   <id>http://donglei.name/2014/08/the-three-body</id>
+   <content type="html">&lt;p&gt;这两天看了刘慈欣的《三体》一和二（黑暗森林），作为经典的科幻作品，直到现在才开始看确实有点说不过去。主要原因可能还是自己这几年的阅读虚构类比重下降严重，更倾向于读非虚构作品，但谁又能说前者不是“真实世界”呢？对于《三体》，说实话第一部看完后印象一般，感觉有种过誉的嫌疑，从科幻上来说有一定功力，但总觉得缺了点什么，因为篇幅短（300页）无法建构一个完善的体系？但第二部给了我眼前一亮的感觉，可以给出5星，特别是其中的黑暗森林法则。不过这里想要先讨论一下大刘的几个宇宙文明公理和引力。&lt;/p&gt;
+
+&lt;p&gt;宇宙文明公理：1、生存是文明的第一需要；2、文明不断增长和扩张，但宇宙中的物质总量保持不变。&lt;/p&gt;
+
+&lt;p&gt;前者可能可以被认为是公理，但第二条却有待商榷。第二条似乎想在宇宙文明中引入达尔文物种繁殖-&gt;地球资源有限-&gt;适者生存的体系，但且不说这与第一条有部分重叠之嫌，单说文明是不是会不断增长和扩张就值得怀疑，在第一条成立的情况下，如果文明为了生存不得不衰退和收缩呢？会不会出现大规模的自杀现象？像部分动物中存在的那样？我们不知道。&lt;/p&gt;
+
+&lt;p&gt;另外作者还有两条引理，一个是猜疑链，一个是技术爆炸。其实猜疑链就是多次博弈，而三体与地球之间的猜疑可以被简化成一种囚徒困境，只不过地球发出了一个信息后（signal），三体拥有了占优策略。包括最后罗辑与三体文明的谈判，也是以要死两个文明一起死的方式亮出了底牌，这与大国争霸没什么不同，你有原子弹，我也有，要死一起死，最终都在一种命悬一线的微妙制衡。&lt;/p&gt;
+
+&lt;p&gt;宇宙中有没有其它生命，如果有，为什么我们到现在还不知道？对于这一问题，我认为大刘给出了一个我目前看到得最精彩的假设：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;“真实的宇宙就是这么黑。”罗辑伸手挥挥，像抚摸天鹅缄般感受着黑暗的质感，“宇宙就是一座黑暗森林，每个文明都是带枪的猎人，像幽灵般潜行于林间，轻轻拨开挡路的树枝，竭力不让脚步发出一点儿声音，连呼吸都小心翼翼…… 他必须小心，因为林中到处都有与他一样潜行的猎人。如果他发现了别的生命，不管是不是猎人，不管是天使还是魔鬼，不管是娇嫩的婴儿还是步履蹒跚的老人，也不管是天仙般的少女还是天神般的男神，能做的只有一件事：开枪消灭之？在这片森林中，他人就是地狱，就是永恒的威胁，任何暴露自己存在的生命都将很快被消灭。这就是宇宙文明的图景，这就是对费米悖论的解释。”
+在一篇南方周末的采访稿里提到一个细节：1990年代初，刘慈欣编写过一个软件，在这个软件里，宇宙中的每一个智慧文明都被简化为一个点。最多的时候，他在十万光年的半径里设定了三十万个文明，然后让那台286计算机花了几个小时来计算这些文明的演化图景。最后他得出的结论是：其诡异程度是很难凭空想出来的。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;如果我没有猜错的话，大刘写得其实就是“生存游戏”，也就是元胞自动机（CA）。元胞世界的法则很简单，但可以演化出极其丰富的结果。自冯诺伊曼提出这个规则以来，有一些科学家倾向于相信这是世界万物的本质规律。简单但深刻。包括后来Mathematica的创始人Wolfram还曾经写过一本厚厚的书专门介绍这个“法则”。&lt;/p&gt;
+
+&lt;p&gt;我最近做的几件事情与简单的法则演化也很有关系，比如当年的谢林模型，说得是如果人们只是有一个很小的倾向：和自己的同类（种族、职业类似等）住在一起，也可能会产生比较严重的居住隔离。我重复了许多人的模拟：在一个平面内一开始随机分布了两种类型的“人”，他们是均匀混合的，但比如每个人有一个倾向，在周围8个人中，至少就3个和自己是同类就不移动，否则就“搬家”，直到满足前面的条件。这也是一种前面提到的元胞自动机，和大刘模拟的没有本质不同。结果是这样的：&lt;/p&gt;
+
+&lt;p&gt;figure_1&lt;/p&gt;
+
+&lt;p&gt;figure_7&lt;/p&gt;
+
+&lt;p&gt;经过几代之后，形成了比较明显的居住分隔。那么，我们的城市是不是由简单的规律主宰呢？&lt;/p&gt;
+
+&lt;p&gt;去年年底人物杂志问刘慈欣，你如何看待世界末日？&lt;/p&gt;
+
+&lt;p&gt;刘：如果所有人都会死，那就是一件能够平静接受的事。&lt;/p&gt;
+
+&lt;p&gt;（draft）&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Instrumental Variables | 工具变量</title>
+   <link href="http://donglei.name/2014/07/instrumental-variables.html"/>
+   <updated>2014-07-21T00:00:00+08:00</updated>
+   <id>http://donglei.name/2014/07/instrumental-variables</id>
+   <content type="html">&lt;h3&gt;内生性：&lt;/h3&gt;
+
+&lt;p&gt;我们先来看个例子（引自知乎日报《哪只蝴蝶扇动了翅膀：寻找工具变量》）：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;我们认为以下真理是不证自明的：制度对经济增长具有很大的促进作用。 当然为了科学性也需要证明一下。考虑两个命题：&lt;/p&gt;
+
+&lt;p&gt;1、在控制了其他因素的前提下，由于制度较好的国家通常经济更发达，因此制度对经济增长具有很大的促进作用。&lt;/p&gt;
+
+&lt;p&gt;2、在控制了其他因素的前提下，由于中国 1919 年教会学校人数较多的地区通常经济更发达，因此制度对经济增长具有很大的促进作用。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;相信出乎很多人意料，第二个才是比较有效的实证回归，因为第一个假设存在一个问题：不但制度（更好的产权保护，更加民主、法制等等）影响了经济发展，经济发展反过来也会影响制度。因此经济和制度之间有一种双向因果关系。这种现象在计量中被称为内生性，内生性可以说是个“大杀器”，你几乎可以拿它质疑大部分回归模型，许多经济学paper都在想方设法解决内生性问题，解决好的很多可以发到牛杂志了：）&lt;/p&gt;
+
+&lt;p&gt;内生性问题除了刚说到的双向因果，还有遗漏变量，和变量有测量误差，我们重点关注最常见的前两个。&lt;/p&gt;
+
+&lt;p&gt;先举个关于遗漏变量的经典例子，很多人都认为教育会提高一个人的工资，受教育程度高的人工资往往也高，于是我们开心地做了个回归：&lt;/p&gt;
+
+&lt;p&gt;$$wage = a * education + u$$&lt;/p&gt;
+
+&lt;p&gt;这个系数就是教育对工资的影响系数。稍等！有没有什么问题？回归系数一致且有效的一个前提假设是education和误差项u不相关，cov(X,u)=0，除了education外，一个人的能力（ability）是不是也与工资有关？而且这个能力往往还与education有关，如果不把能力放到回归项里，那它就在u里，又与education相关，违反了cov(X,u)=0。少年，回归出来的a是有偏差的，是不是很伤感？这就是遗漏变量的问题。&lt;/p&gt;
+
+&lt;h3&gt;工具变量是啥？&lt;/h3&gt;
+
+&lt;p&gt;再回到经济发展与制度，两者有双向因果关系，那我们能不能找个与制度有关系，但与经济没啥关系的变量，通过它的变化来间接反映制度对经济的影响，如果找到这么个变量，就可以用来当工具变量。&lt;/p&gt;
+
+&lt;p&gt;稍微严格一点说就是，工具变量是在回归方程中加入一个与Y和误差项z无关而和X有关的变量来解决内生性问题。学术点的写法就是Cov(Z,u)=0 and Cov(Z,X)!= 0，其中z就是那个工具变量。也就是说我们找到了一个与X有关，而与误差项u无关的变量Z。&lt;/p&gt;
+
+&lt;p&gt;这样原来的最小二乘回归（OLS）就要变成两阶段最小二乘回归（TSLS）。&lt;/p&gt;
+
+&lt;p&gt;第一阶段，把X分解成两部分，与回归误差u相关的一部分，以及与误差项无关的一部分；&lt;/p&gt;
+
+&lt;p&gt;$$X = a_0 + a_1*Z + v$$&lt;/p&gt;
+
+&lt;p&gt;其中Z是工具变量，TSLS的思想就是利用X中没有问题的部分(a_0 + a_1*Z)，忽略有问题的部分v。这个a0, a1就是第一阶段要用OLS估计的系数。&lt;/p&gt;
+
+&lt;p&gt;第二阶段，用OLS进行Y与&lt;X&gt;回归（&amp;lt;&gt;代表一阶段X的估计值）。 这两步在现在的统计软件，像SPSS，STATA里都可以直接算。关键就是能不能找到有效的工具变量。&lt;/p&gt;
+
+&lt;p&gt;我们举几个比较经典的工具变量的例子（需要说明的是这些工具变量都不是特别直观）：&lt;/p&gt;
+
+&lt;p&gt;像前面说的制度与经济，Acemoglu等人（2001）找到了一个变量：殖民地死亡率。首先，殖民地死亡率意味着这个地区是适合定居还是不适合定居，死亡率高显然是不适合定居，从而决定了殖民者的策略选择。如果适合定居，那么殖民策略就是建设型；如果不适合定居，殖民者往往采取掠夺战略。也就是说通过殖民地死亡率与过去的制度类型是相关的，而过去的制度又影响了现在的制度，因此也与现在的制度相关。但同时，早期殖民地的死亡率是与现代经济发展不相关的。那么，殖民地死亡率就成为了一个很好的工具变量。&lt;/p&gt;
+
+&lt;p&gt;再来看一个问题：将罪犯关进监狱会降低犯罪率么？我们可以考察入狱人数增加1%（方程中的X）引起的犯罪率（Y）变化。但X与Y存在双向因果：一方面，被关的人数增长使犯罪率下降；另一方面，犯罪率下降会使罪犯数量减少，会减少入狱人数。也就是说X与Y互相影响，无法判断X到底对Y产生了怎样的影响。 这时，我们需要找到一个工具变量，与入狱人数相关，但与犯罪率无关。这样我们就可以验证入狱人数究竟对犯罪率产生了怎样的影响。经济学怪才Levitt（1996，另著有畅销书《魔鬼经济学》）找到了一个工具变量：监狱过分拥挤的诉讼数量。一方面，针对监狱过度拥挤的诉讼数量反应了监狱条件的变化，进而会影响入狱人数的变化。比如当出现关于监狱过度拥挤的诉讼时，监狱可能就会少收罪犯。因此这个工具变量与入狱人数X相关。但另一方面，监狱过度拥挤诉讼与犯罪率又没有直接关系。&lt;/p&gt;
+
+&lt;p&gt;当然类似的例子还有很多，国家间距离，天气情况，地震情况，河流分布等等都被拿来当过工具变量，写出过经典的文章。 像知乎日报《哪只蝴蝶扇动了翅膀：寻找工具变量》中作者写道的：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&quot;我认为经济学的实证分析中，最好玩最有意思的是对内生性的解决，这是枯燥乏味的经济研究中为数不多的乐趣，它需要灵光乍现的巧思，还需要对经济社会各种知识的把握，各种因素的权衡。寻找工具变量的旅程就像寻找飓风的形成是由于哪一只蝴蝶扇动的翅膀，结论有时候是匪夷所思的，但是越是这样，也需要讲故事的能力。&quot;
+当然了，工具变量也有有效性的问题，一个方程中也可以用多个工具变量，具体问题留给大家使用中去了解、解决。这里想说的核心问题是：有时候我们特别想当然地把一堆变量放进去回归，算算看哪个显著就是哪个，但其实，我们绝大部分经济学回归根本就是错的。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;注：文中用的Acemoglu等人研究的例子来自知乎日报《哪只蝴蝶扇动了翅膀：寻找工具变量》。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Side Quests | 支线剧情</title>
+   <link href="http://donglei.name/2014/07/side-quests.html"/>
+   <updated>2014-07-06T00:00:00+08:00</updated>
+   <id>http://donglei.name/2014/07/side-quests</id>
+   <content type="html">&lt;blockquote&gt;&lt;p&gt;这是第12期《四月》的前言，放在这里存个档。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;以前玩儿游戏，特别是角色扮演类（RPG），有主线剧情与支线剧情一说。往往支线剧情的不同，会导致结局的变化，很多人对此乐此不疲。更有骨灰级的玩家会尝试各种可能，写出一种名为“攻略”的读物，供玩家参阅。我不怎么玩rpg，但以前买《大众软件》，特别喜欢看攻略部分，就像读一篇小说，仿佛体验了不同的人生百态。&lt;/p&gt;
+
+&lt;p&gt;然而人这一辈子是个开放系统，没人玩完后还能写本攻略供你参考。即便有些感悟的文章或是传记，也多是一种特定的剧情——不可能有人存档读档，试遍所有可能。&lt;/p&gt;
+
+&lt;p&gt;所以在真实生活中，大多数人沿着所谓的主线剧情行走，选择。因为这样“安全”，不容易“跑偏”，被众人的选择裹挟前行也不太费脑子。一但有人试图尝试支线任务，便容易被贴上不务正业的标签，沉溺于支线则被直斥不可救药。除非支线走成主线，变身高帅富，迎取白富美，但没变成主线，没完成华丽转身，就是有兴趣，就是想试试，又有什么不行呢？&lt;/p&gt;
+
+&lt;p&gt;本期的主题是“不学无术”，这个词儿本身就很有意思，不同于传统的解释，我们想展示丰富的支线剧情可能，这里有学材料的摄影师，有学建筑的游戏设计师，有业余诗人，“二流”皮匠，不专业漫画家，准专业主持人，或许你会感慨，“不学无术”竟然可以是一件很美好的事情。&lt;/p&gt;
+
+&lt;p&gt;一稿完成于 2014.05.15&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Boosting Your Energy | &quot;精力&quot;秘籍</title>
+   <link href="http://donglei.name/2014/06/boosting-your-energy.html"/>
+   <updated>2014-06-20T00:00:00+08:00</updated>
+   <id>http://donglei.name/2014/06/boosting-your-energy</id>
+   <content type="html">&lt;p&gt;最近dropbox被墙了，文件在不同平台上同步起来特别不方便，我在想不会哪一天自己的博客也会被和谐吧。这年头，多存几个备份才是王道。等过几天买几张光盘，把重要的刻进去。这篇文章其实是个阅读笔记，放到这儿备查。&lt;/p&gt;
+
+&lt;p&gt;有时候我会对自己的身体状态有种感知，比如说今天状态好，精力比较充，另一天可能状态没有哪么好，比较萎靡。自己也能理解身体状态可能与作息、运动等息息相关，但一直对“精力”没有个系统的认识。前几天拿到手《新知》杂志（三联去年复刊的一本知识类杂志），里面有篇&lt;strong&gt;哈佛大学医学院健康报告&lt;/strong&gt;，英文名为&lt;strong&gt;BOOSTING YOUR ENERGY&lt;/strong&gt;，解决了我不少困惑。&lt;/p&gt;
+
+&lt;h4&gt;什么是精力（What is Energy）&lt;/h4&gt;
+
+&lt;p&gt;我们常说的精力好或不好，分身体和精神两个层面：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;身体活力&lt;/strong&gt;： 与细胞产生的实际能量（如ATP）有关，能量有助于肌肉和大脑细胞活力。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;精神活力&lt;/strong&gt;： 除细胞产生的ATP外，与情绪很有关系，如果我们能沉浸在某事物种，进入一种精神高度集中的状态，我们会比平时更有活力。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h4&gt;什么决定精力水平 （What Determines Your Energy Level）&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;昼夜规律（生物钟）&lt;/strong&gt;：人的清醒程度主要由大脑深处一组脑细胞决定，它们的作用是调节清醒程度、胃口、体温等生理状况。
+有时候上班族容易得&lt;strong&gt;“星期日失眠症”&lt;/strong&gt;，大家星期五晚上熬夜，星期六早上晚起，从而导致星期六晚上熬夜到更晚，星期日早上起更迟，加上周日对于周一要上班的恐慌，使得周日晚上更不容易按规律睡。&lt;/li&gt;
+&lt;li&gt;激素与大脑化学物质： 1）由左右半脑中间的松果腺产生的褪黑激素是一种引发倦意的激素。环境光的强度会影响此激素产生，入夜后褪黑激素开始增加，让人产生睡意，而到了清晨，激素水平会开始下降，让人逐渐清醒。&lt;strong&gt;可见黑暗的环境更有助于获得一个好的睡眠质量。&lt;/strong&gt;2）此外，女性生理周期会影响激素分泌，从而影响精力，很多女性生理期前会感到疲劳、易怒、忧伤。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h4&gt;运动如何提高精力 （How Activity Boosts Energy）&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;肌肉中的&lt;strong&gt;线粒体增多&lt;/strong&gt;，所以运动在消耗能量的同时，还会产生更多的能量。&lt;/li&gt;
+&lt;li&gt;运动能使体内产生&lt;strong&gt;更多的毛细血管&lt;/strong&gt;，增强体力氧输送能力。&lt;/li&gt;
+&lt;li&gt;运动能&lt;strong&gt;平衡体内激素水平&lt;/strong&gt;，让人感到充满活力。运动增加&lt;strong&gt;安多芬的分泌&lt;/strong&gt;，让人产生愉悦感。&lt;/li&gt;
+&lt;li&gt;运动可以&lt;strong&gt;增加深度睡眠时间&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h4&gt;激发活力六步法 （Six Ways to Boost Energy）&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;合理膳食&lt;/strong&gt;，每餐中水果蔬菜各占一四分之一量，全麦碳水化合物也非常有益健康。至于蛋白质，鱼肉、鸡肉、豆类和坚果比红肉好。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;定期运动&lt;/strong&gt;，每周进行适度有氧运动150分钟（如每周五天，每次30分钟），也建议每周两到三次力量训练，两次肌肉训练间隔至少48小时，以便让身体更好地恢复。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高质量睡眠&lt;/strong&gt;，保证睡觉时卧室没有光，睡前不抽烟，适量运动。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;控制压力&lt;/strong&gt;，除了运动外，可试试冥想。这里有篇不错的关于冥想的&lt;a href=&quot;http://www.dennythecow.com/?p=547&quot;&gt;文章&lt;/a&gt;,推荐一读。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接触大自然&lt;/strong&gt;，Edward O. Wilson认为人类和自然以及其他生物有一种内在的联系，因此接触自然有益于健康。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;专注于目标&lt;/strong&gt;，找一件可以让你兴奋的事情来做，这样你才能让你的精力真正得其所用。&lt;/li&gt;
+&lt;/ol&gt;
+
 </content>
  </entry>
  
