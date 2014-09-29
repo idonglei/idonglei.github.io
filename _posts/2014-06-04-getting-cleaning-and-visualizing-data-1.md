@@ -5,7 +5,8 @@ tags:
   - Data
   - Python
   - R
-
+  - Visualization
+  
 ---
 
 昨天（6月3号）晚上，果说@Fruitalk小团体举行了一次线下沙龙。交流了关于数据获取、分析与表达的相关问题。

@@ -114,7 +114,9 @@ $$\Delta W=\Delta mg\frac{1+(x/R)}{2}(R-x)=\Delta mg\frac{R^2-x^2}{2R}=\frac34\f
 
 积分可得：
 
-$$W=\frac34\frac{Mgd}{R^4}\sum (R^2-x^2)x\Delta x=\frac34\frac{Mgd}{R^4}\int_{0}^{R}(R^2-x^2)xdx=\frac{3}{16}Mgd$$
+$$
+W=\frac34\frac{Mgd}{R^4}\sum (R^2-x^2)x\Delta x=\frac34\frac{Mgd}{R^4}\int_{0}^{R}(R^2-x^2)xdx=\frac{3}{16}Mgd
+$$
 
 作用力:
 
