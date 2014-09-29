@@ -4,7 +4,7 @@
  <title>DongLei's Blog</title>
  <link href="http://donglei.name/atom.xml" rel="self"/>
  <link href="http://donglei.name"/>
- <updated>2014-09-29T13:48:48+08:00</updated>
+ <updated>2014-09-29T14:20:45+08:00</updated>
  <id>http://donglei.name</id>
  <author>
    <name>donglei</name>
@@ -264,7 +264,7 @@ print &quot;The last dove is:&quot;, doves
    <id>http://donglei.name/2014/08/the-three-body</id>
    <content type="html">&lt;p&gt;这两天看了刘慈欣的《三体》一和二（黑暗森林），作为经典的科幻作品，直到现在才开始看确实有点说不过去。主要原因可能还是自己这几年的阅读虚构类比重下降严重，更倾向于读非虚构作品，但谁又能说前者不是“真实世界”呢？对于《三体》，说实话第一部看完后印象一般，感觉有种过誉的嫌疑，从科幻上来说有一定功力，但总觉得缺了点什么，因为篇幅短（300页）无法建构一个完善的体系？但第二部给了我眼前一亮的感觉，可以给出5星，特别是其中的黑暗森林法则。不过这里想要先讨论一下大刘的几个宇宙文明公理和引力。&lt;/p&gt;
 
-&lt;p&gt;宇宙文明公理：1、生存是文明的第一需要；2、文明不断增长和扩张，但宇宙中的物质总量保持不变。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;宇宙文明公理：1、生存是文明的第一需要；2、文明不断增长和扩张，但宇宙中的物质总量保持不变。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;前者可能可以被认为是公理，但第二条却有待商榷。第二条似乎想在宇宙文明中引入达尔文物种繁殖-&gt;地球资源有限-&gt;适者生存的体系，但且不说这与第一条有部分重叠之嫌，单说文明是不是会不断增长和扩张就值得怀疑，在第一条成立的情况下，如果文明为了生存不得不衰退和收缩呢？会不会出现大规模的自杀现象？像部分动物中存在的那样？我们不知道。&lt;/p&gt;
 
@@ -285,9 +285,9 @@ print &quot;The last dove is:&quot;, doves
 
 &lt;p&gt;经过几代之后，形成了比较明显的居住分隔。那么，我们的城市是不是由简单的规律主宰呢？&lt;/p&gt;
 
-&lt;p&gt;去年年底人物杂志问刘慈欣，你如何看待世界末日？&lt;/p&gt;
+&lt;p&gt;去年年底人物杂志问刘慈欣，&lt;strong&gt;你如何看待世界末日？&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;刘：如果所有人都会死，那就是一件能够平静接受的事。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刘：如果所有人都会死，那就是一件能够平静接受的事。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;（draft）&lt;/p&gt;
 </content>
