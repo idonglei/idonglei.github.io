@@ -2,6 +2,8 @@ markdown: rdiscount
 highlighter: true
 permalink: /:year/:month/:day/:title.html
 name: "DongLei's Blog"
+markdown: rdiscount
+
 author: "donglei"
 atom-baseurl: "http://donglei.name"
 disqus: ""
