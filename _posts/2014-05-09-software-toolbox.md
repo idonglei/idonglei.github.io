@@ -1,5 +1,5 @@
 ---
-title: Software ToolBox |软件工具箱
+title: Software ToolBox | 软件工具箱
 layout: post
 tags:
   - Software

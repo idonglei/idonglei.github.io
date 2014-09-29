@@ -81,7 +81,7 @@ tags:
 
 ###经管学院的书单
 
->"读书虽不能享受生活，却能享受生命。读书不能满足物质的欲望，却能得到精神的充实和灵魂的完美。把钱颖一院长推荐给大一新生的这十本书加入你的阅读计划吧。"
+>“读书虽不能享受生活，却能享受生命。读书不能满足物质的欲望，却能得到精神的充实和灵魂的完美。把钱颖一院长推荐给大一新生的这十本书加入你的阅读计划吧。”
 
 1. Freakonomics: A RogueEconomist Explores the Hidden Side of Everything, by Steven D. Levitt andStephen J. Dubner, William Morrow, 2005.《魔鬼经济学》/（美）史蒂芬·列维特、史蒂芬·都伯纳著，刘祥亚译，广东经济出版社2006。
  
