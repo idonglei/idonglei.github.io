@@ -6,7 +6,7 @@ markdown: rdiscount
 
 author: "donglei"
 atom-baseurl: "http://donglei.name"
-disqus: ""
+
 
 navigations:
   - title: Archive
@@ -27,4 +27,18 @@ navigations:
   - title: Subscribe
     class: fa fa-rss
     href: /atom.xml
+
+#googleAnaly
+googleAnaly:
+  config: false
+  id: UA-40169250-1
+
+#comment config
+disqus:
+  config: false
+  id: piznblog
+
+duoshuo:
+  config: true
+  id: donglei
 
