@@ -16,16 +16,16 @@
   padding: 0; }
 
 body {
-  font-size: 14px;
+  font-size: 15px;
   font-family: "telexregular", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   color: #555;
-  background-color: #f9f9f9; }
+  background-color: #f9f9f9;}
 
 ol, ul {
   list-style-position: inside; }
 
 li {
-  padding: .2em 0; }
+  padding: 0.2em 0; }
 
 hr {
   width: 4em;
@@ -48,10 +48,10 @@ a, header #header h1 a, article .title a, article .meta .tags a, article .divide
 
 blockquote, pre code {
   background-color: #f8f8f8;
-  padding: 0 1em;
-  border: 1px dashed #eee !important;
+  padding: 0.5em 1em;
+  border: 2px dashed #eee !important;
   border-color: #e0e0e0 !important;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   display: block;
   overflow: auto; }
@@ -91,7 +91,7 @@ header {
     position: relative;
     top: 1em; }
     header nav span {
-      margin: .5em; }
+      margin: 0.5em; }
     header nav a, header nav #header h1 a, header #header h1 nav a, header nav article .title a, article .title header nav a, header nav article .meta .tags a, article .meta .tags header nav a, header nav article .divider a, article .divider header nav a {
       font-family: "telexregular", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       color: #ccc; }
@@ -99,7 +99,7 @@ header {
 #content {
   width: 680px;
   margin: 0 auto;
-  line-height: 2em; }
+  line-height: 1.8em; }
   #content .main-listing {
     margin-bottom: 2em; }
 
@@ -131,7 +131,8 @@ article {
   article .meta {
     display: block;
     overflow: auto;
-    margin-top: -.5em;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
     font-size: .9em; }
     article .meta .tags header #header h1 a, header #header h1 article .meta .tags a, article .meta .tags a {
       color: #999999;

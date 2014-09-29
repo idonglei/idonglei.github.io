@@ -1,6 +1,7 @@
 ---
 title: Blog One Year | 博客写作一周年记
 layout: post
+guid:
 tags:
   - Essay
 

@@ -1,6 +1,7 @@
 ---
 title: Raw Data from Figures | 从图片中提取数据
 layout: post
+guid:
 tags:
   - Python
   - Data

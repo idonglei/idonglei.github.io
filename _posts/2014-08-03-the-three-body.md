@@ -1,6 +1,7 @@
 ---
 title: The Three Body | 三体
 layout: post
+guid:
 tags:
   - Essay
   

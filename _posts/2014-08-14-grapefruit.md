@@ -1,6 +1,7 @@
 ---
 title: Grapefruit | 买柚子风波
 layout: post
+guid:
 tags:
   - Essay
 

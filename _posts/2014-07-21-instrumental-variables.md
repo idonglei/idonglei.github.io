@@ -1,6 +1,7 @@
 ---
 title: Instrumental Variables | 工具变量
 layout: post
+guid:
 tags: Economics
 
 ---

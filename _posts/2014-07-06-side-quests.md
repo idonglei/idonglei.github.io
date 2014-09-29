@@ -1,6 +1,7 @@
 ---
 title: Side Quests | 支线剧情
 layout: post
+guid:
 tags:
   - Essay
 
