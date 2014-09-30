@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/mono-blue.min.css">
         <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
     <script>
-      hljs.configure({tabReplace: ' '})
+      hljs.configure({tabReplace: '    '});
       hljs.initHighlightingOnLoad();
     </script>
 
@@ -124,7 +124,7 @@ library(mapproj)
 map &lt;- get_map(location = 'Beijing', zoom = 8) #以北京为中心，zoom代表类似放大倍数，GOOGLE API好像对此有限制，待查
 </code></pre>
 
-<p>plot_bj</p>
+<p><img src="/media/files/2013/10/plot_bj.jpg" alt="plot_bj" /></p>
 
 <p>京津冀地区出现了。Google地图本身就是个大的GIS系统，如果在上面一行代码里加上 maptype = 'roadmap'就可以得到北京的路网图。</p>
 
@@ -133,7 +133,7 @@ map &lt;- get_map(location = 'Beijing', zoom = 8) #以北京为中心，zoom代�
 
 <p>更重要的是基于GOOGLE地图我们还可以叠加各种自己处理过的信息，比如很火的航班数据可视化，在<a href="http://spatialanalysis.co.uk/2012/06/mapping-worlds-biggest-airlines/">Mapping the World's Biggest Airlines</a>里有详细描述，但不是基于Google地图。在<a href="http://xccds1977.blogspot.com/2012/07/blog-post_26.html">中国国内航线信息的可视化</a>中，有一个简化的作法。我也简单画了一个，有时间研究下那个比较FANCY的夜景航线图是怎么做出来的。</p>
 
-<p>plot_air</p>
+<p><img src="/media/files/2013/10/plot_air.jpg" alt="plot_air" /></p>
 
 <hr />
 

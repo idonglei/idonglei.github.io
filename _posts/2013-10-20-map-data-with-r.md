@@ -52,7 +52,7 @@ mapdata(有中国地图，但比较老，重庆和四川还没分开）
 	library(mapproj)
 	map <- get_map(location = 'Beijing', zoom = 8) #以北京为中心，zoom代表类似放大倍数，GOOGLE API好像对此有限制，待查
 
-plot_bj
+![plot_bj](/media/files/2013/10/plot_bj.jpg)
 
 京津冀地区出现了。Google地图本身就是个大的GIS系统，如果在上面一行代码里加上 maptype = 'roadmap'就可以得到北京的路网图。
 
@@ -61,7 +61,7 @@ plot_bj
 更重要的是基于GOOGLE地图我们还可以叠加各种自己处理过的信息，比如很火的航班数据可视化，在[Mapping the World's Biggest Airlines](http://spatialanalysis.co.uk/2012/06/mapping-worlds-biggest-airlines/)里有详细描述，但不是基于Google地图。在[中国国内航线信息的可视化](http://xccds1977.blogspot.com/2012/07/blog-post_26.html)中，有一个简化的作法。我也简单画了一个，有时间研究下那个比较FANCY的夜景航线图是怎么做出来的。
 
 
-plot_air
+![plot_air](/media/files/2013/10/plot_air.jpg)
 
  
 ***

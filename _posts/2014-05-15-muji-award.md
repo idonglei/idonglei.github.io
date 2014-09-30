@@ -17,11 +17,11 @@ MUJI AWARD 04以**“生活中的恒久设计”（Long Lasting Design for Livin
 
 收纳书 作者名：叶智泉 (现居香港)
 
-image01_01
+![muji01_01](/media/files/2014/05/muji01_01.jpg)
 
-image01_02
+![muji01_02](/media/files/2014/05/muji01_02.jpg)
 
-image01_03
+![muji01_03](/media/files/2014/05/muji01_03.jpg)
 
 >将物件归类的习惯，已经成为了生活的一部份，但我们有时会碰到无法决定物件收纳位置的情况。如果将收纳盒作成书的形状，就可以简单的决定收纳盒的放置位置了。结合无印良品的收纳盒和一般的书本的形状，书脊上可以写下物件的类别。「收纳书」和书本一起排列在书架上，但其和书架上的书本不同，有着收纳的功能。
 
@@ -55,11 +55,11 @@ image01_03
 
 小石子粉笔 作者名：小高浩平 (现居日本)
 
-image02_01
+![muji02_01](/media/files/2014/05/muji02_01.jpg)
 
-image02_02
+![muji02_01](/media/files/2014/05/muji02_01.jpg)
 
-image02_03
+![muji02_01](/media/files/2014/05/muji02_01.jpg)
 
 小石头造型的粉笔。
 

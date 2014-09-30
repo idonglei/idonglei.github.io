@@ -9,27 +9,27 @@ tags:
   
 >如果我能畅所欲言，又何苦背起相机。
 
->“If I could tell the story in words, I wouldn't need to lug around a camera. ” ——Lewis Hine
+>“If I could tell the story in words, I wouldn't need to lug around a camera. ” ——[Lewis Hine](http://en.wikipedia.org/wiki/Lewis_Hine)
 
 或许因为所学专业的原因，同学、朋友中喜欢摄影的不少，包括自己也是。当年大三博物馆选题，还傻乎乎设计了一个位于烟袋斜街的老照片博物馆，评图时用S老师的话说，形式上没收住。也难怪，当时的那个所谓的“观景塔”赤裸裸的模仿了一把SH大师。当时本来没有那个“观景塔”，但觉得自己房子做的太平淡，大部分展览功能埋到了地下不说，地上部分就是几个改造性质的砖砌合院，没有点形式上的东西如何释放自己设计的能量？不过这个事儿让我明白了，SH大师或许不适合北京，我当时也不懂设计。
 
 后来开始迷惑于一个问题：什么才是好的影像？只到最近才模模糊糊有了点自己的评价标准，说标准似乎高了点，更实际的说是关注点：**一张照片能否展现摄影师对人、对生活的关注，能否从中读出故事和情感特别重要，这体现了一个摄影师有没有用心在观察生活。**记得去年刘香成来学校讲座，讲起他在刚恢复高考不久在天安门广场上拍的一张照片，“那时很多人家里晚上灯不够用，要考大学的学生，就跑到天安门广场借着路灯去读书。“我想把自己的位置与学生拉平，只能趴在地上拍。我趴在这个女孩子的前面，趴在地下，按着B快门，我也没有办法知道曝光要多少，我在心里数一二三四，数了25下再放开。有意思的是，数了那么久，她们一丝都没有动，要知道如果她们动了一下，照片就会虚了。”就像他定义的中国人——“能够在三十三年中熬过二十五场运动”。
 
-tiananmen
+![tiananmen](/media/files/2013/12/tiananmen.jpg)
 
 “为看清生命，你得去看穷人的脸和骄傲的人的手势，为看清一个男人的工作去看这个男人所爱的女人，仔细观察，在观察中得到乐趣。”（亨利·卢斯，《生活》杂志创始人）设计领域何尝不是这样呢？
 
-OMA-CCTV-May-2006-2769
+![OMA-CCTV-May-2006-2769](/media/files/2013/12/OMA-CCTV-May-2006-2769.jpg)
 
-OMA-CCTV-March07-1513
+![OMA-CCTV-March07-1513](/media/files/2013/12/OMA-CCTV-March07-1513.jpg)
 
-Olympic-Stadium-Dec06-4674
+![Olympic-Stadium-Dec06-4674](/media/files/2013/12/Olympic-Stadium-Dec06-4674.jpg)
 
-Steven-Holl-LH-09-05-0106
+![Steven-Holl-LH-09-05-0106](/media/files/2013/12/Steven-Holl-LH-09-05-0106.jpg)
 
-03Museum-Harbin-MAD-1354
+![03Museum-Harbin-MAD-1354](/media/files/2013/12/03Museum-Harbin-MAD-1354.jpg)
 
-16Museum-Harbin-MAD-2309​
+![16Museum-Harbin-MAD](/media/files/2013/12/16Museum-Harbin-MAD.jpg)
 
 不知道看到上面的照片有何感想，他们都来自[Iwan Baan](http://www.iwan.com)之手，一个公认当代最好的建筑摄影师之一。他的观察与思考可以从[他在TED的演讲](http://www.ted.com/talks/iwan_baan_ingenious_homes_in_unexpected_places.html)中管窥一二。
 

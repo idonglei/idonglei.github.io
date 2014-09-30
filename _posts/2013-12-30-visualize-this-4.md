@@ -11,13 +11,13 @@ tags:
 
 这次还是关于地图信息可视化。让我们试试中国的数据，操作步骤很简单。
 
-基础资料：0)数据，这个因人而异；1）矢量中国地图（搜索引擎很容易找到）；2）配色方案，可参考一个不错的网站ColorBrewer；3）软件工具：AI（illustrator）
+基础资料：0)数据，这个因人而异；1）矢量中国地图（搜索引擎很容易找到）；2）配色方案，可参考一个不错的网站[ColorBrewer](http://colorbrewer2.org/)；3）软件工具：AI（illustrator）
 
 另外，强烈推荐经常看一下**经济学人杂志的图表**，我认为是所有出版物中做的比较好的。（比如这个[关于中国省市经济情况](http://www.economist.com/content/chinese_equivalents)）
 
 基础数据、地图、工具准备好后，就可以方便做出一个比较简单的可视化效果：
 
-基本 RGB
+![ChinaDistribtution](/media/files/2013/12/ChinaDistribution.png)
 
 具体的制作过程只用到了AI的最基本操作，上图制作不会超过半个小时。
 
@@ -27,6 +27,6 @@ tags:
 
 另外再奉送一张柱状图的可视化，关于**光伏能源回收周期**。里面涉及：1）不同类型的光伏（c-Si, a-Si）2）三个部分（组件、Module Frame,其他部分）3）在三种辐射地区（高、中、低）4）不同安装位置（屋顶、地面）近十个变量。
 
-04
+![hist](/media/files/2013/12/hist.png)
 
 Credit: TU DelftX (Solar Energy)

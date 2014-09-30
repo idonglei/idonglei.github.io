@@ -7,8 +7,8 @@ tags:
   - R
 
 ---
-  
-plot_zoom
+ 
+![faces](/media/files/2013/12/faces.png)
 
 熟悉NBA的人对上面的这些名字应该不会陌生，这是份NBA球员08-09赛季前50位得分手统计信息可视化，当然图上的长相反应的是它们的数据，与真实长相无关。这张图是我用自己的电脑画的，但数据和代码来自Nathan Yau写[Visualize This](http://book.flowingdata.com/)，一本关于数据可视化方面的好书。作者是UCLA的统计学博士，还在纽约时报、CNN、Mozilla等公司工作过，是个资深的数据迷。正好趁着自己在读这本书，把书中的趣的例子记录下来，后面会陆续加入我自己的理解。
 
@@ -32,7 +32,7 @@ plot_zoom
 
 所以我们可以看到雷阿伦的头发特别宽（三分球命中高），霍华德耳朵特别宽（篮板多）。当然这种类型的图娱乐的性质大于其信息呈现。那么不防让我们再来看一张图：
 
-robber
+![robber](/media/files/2013/12/robber.png)
 
 这是一张关于美国犯罪率的图，数据来源和代码同样来自上面提到的书。图中每个小图代表一个州，这种画法叫Radar Chart或Spider Chart，右下角有图例，应该很容易明白什么意思。
 
@@ -58,3 +58,7 @@ robber
 	stars(crime, flip.labers = FALSE, key.loc = c(15, 1.5)) #flip.labers设置为FALSE，标签不会影响高度
 
 作者的[网站](http://www.flowingdata.com)也非常有趣，提供了很多鲜活的例子。
+
+***
+
+第二个例子的数据集被作者删除了。（2014.09.30）

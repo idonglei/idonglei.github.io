@@ -21,7 +21,7 @@ tags:
 
 ###第一张图：
 
-US_shop
+![US_shop](/media/files/2013/12/US_shop.png)
 
 这是一家连锁店全美开店位置图。可以看到它主要集中在东西海岸，数据在这里下载。
 
@@ -39,7 +39,7 @@ US_shop
 
 ###第二张：
 
-Fertility
+![Fertility](/media/files/2013/12/Fertility.png)
 
 第二张图是《2008年联合国人类发展报告》中未成年人生育率（每1000名15-19岁女性中生育数量）。数据可以在这里下载。
 
@@ -55,7 +55,7 @@ Fertility
 
 ###第三张：
 
-colored_map
+![colored_map](/media/files/2013/12/colored_map.png)
 
 这是美国2010年8月失业情况按县域的分布，红色越深表示失业率越高，下次我记得加比例尺。数据可以在这里下载。和文章一开始提到的地图放到一个文件夹下。
 

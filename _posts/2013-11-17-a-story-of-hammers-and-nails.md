@@ -28,4 +28,4 @@ tags:
 
 自己现在欠缺的是提出一个好的问题，然后用打造的工具箱去解决它。
 
-Hammer-nails
+![Hammer-nails](/media/files/2013/11/Hammer-nails.png =400x)

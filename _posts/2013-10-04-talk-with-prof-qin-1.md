@@ -19,17 +19,17 @@ tags:
 YALE著名的经济学教授William D. Nordhaus还在前人研究的基础上划分了全世界经度1°X纬度1°的网格，绘制了全球的GDP空间分布地图。（详见： http://gecon.yale.edu/）
 
  
-11
+![TilottamaGhosh](/media/files/2013/10/TilottamaGhosh.png)
 
-图片来源：Tilottama Ghosh等， Shedding Light on the Global Distribution of Economic Activity
+*图片来源：Tilottama Ghosh等， Shedding Light on the Global Distribution of Economic Activity*
 
-chinaGDP
+![ChinaGDP](/media/files/2013/10/ChinaGDP.jpg)
 
-China GDP 图片来源： http://gecon.yale.edu/
+*China GDP 图片来源： http://gecon.yale.edu/*
 
-USGDP
+![USAGDP](/media/files/2013/10/USAGDP.jpg)
 
-US GDP 图片来源： http://gecon.yale.edu/
+*US GDP 图片来源： http://gecon.yale.edu/*
 
 但些数据还是有缺点，最简单的就是受制于夜间照明图片的精度（图片还有“过曝”的情况），分析多用于缺少数据的非洲、拉美及其他第三世界国家（貌似中国也算第三世界），精度也局限在国家、区域层面，最多到城市群，很难分析城市内部问题。这时我们想到了一些方法可以进行进一步的分析，比如从住房水平分布、住房价格分布、小汽车分布等来判断。
 

@@ -26,9 +26,11 @@ tags:
 
 关于异质性，Duncan给过很精妙的解释。我改编一个更好理解的版本：我们假设要调查一个人对两种可乐（A和B，其中A用阴影表示，B用空白表示）的偏好。图1表示存在总体异质，每个人回答的方式是固定的，要么喜欢A要么喜欢B，喜欢A的人占7/12；图2是代表总体同质，某一群体中，所有个体都是概率性的，每个人的回答是随机的，喜欢A的答案概率是7/12。从统计结果上来看是一样的，但背后的机制有根本上的不同。实际上，我们很少见到两种极端情况，大多是混合数据，图3是康弗斯得到的两者混合，但Duncan认为应该有多种混合（图4），更多关于异质性的讨论可以看文后的参考文献1。
 
-D01图1（左）：异质性群体； 图2（右）：同质但不确定性群体
+![xieyu01](/media/files/2014/04/xieyu01.jpg)
 
-D2
+图1（左）：异质性群体； 图2（右）：同质但不确定性群体
+
+![xieyu02](/media/files/2014/04/xieyu02.jpg)
 
 图3（左）：三种类型的混合群体； 图4（右）：多种类型的混合群体
 
@@ -59,7 +61,7 @@ D2
 
 再来看一个例子。Acemoglu和Robinson（简称AR）写了本*Why Nations Fail*，讨论制度对经济增长的影响，Subramanian（简称S）与这两位老哥儿进行了争论（1）。
 
-Acemoglu-Robinson-Subramanian-chart
+![ARS-chart](/media/files/2014/04/Acemoglu-Robinson-Subramanian-chart.png =400x)
 
 图片来源：参考资料2
 
@@ -75,7 +77,7 @@ AR对此进行了反击，大意是说S拿中国和印度说事儿是有理由�
 
 >urbanization are unlikely to speed up economic development. Even though ..., the notion that a larger fraction of a country’s population living in urban areas improves economic performance does not seem to have empirical support. Policy-makers who hope to increase the long-term economic growth of their countries by supporting, or inhibiting, urbanization are likely to miss their target.
 
-Science2008
+![Science2008](/media/files/2014/04/Science2008.png)
 
 图片来源：Bloom et al. 2008. Urbanization and the Wealth of Nations. *Science* 319
 

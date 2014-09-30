@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/mono-blue.min.css">
         <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
     <script>
-      hljs.configure({tabReplace: ' '})
+      hljs.configure({tabReplace: '    '});
       hljs.initHighlightingOnLoad();
     </script>
 
@@ -90,7 +90,7 @@
 </ol>
 
 
-<p>02</p>
+<p><img src="/media/files/2013/12/bingtu.png" alt="bingtu" /></p>
 
 <p>资料来源：TU DelftX</p>
 
@@ -100,9 +100,9 @@
 
 <p>有时候数据指标比较多的情况下，很难用简单的图表来表达，这时候可以试试HeatMap，可以在二维平面上展示矩阵形式的数据。在这个例子里我们还是用到了NBA数据，简单说就是展示了不同球员的各项指标，于之前文章中提到的“脸图”不同，这种展示方式数据更加直观。在本例中洋红到浅蓝表示数据值由高到低。</p>
 
-<pre><code>heatmap
+<p><img src="/media/files/2013/12/heatmap.png" alt="heatmap" /></p>
 
-bball &lt;- read.csv("http://datasets.flowingdata.com/ppg2008.csv", header = TRUE)
+<pre><code>bball &lt;- read.csv("http://datasets.flowingdata.com/ppg2008.csv", header = TRUE)
 
 bball &lt;- bball[order(bball$PTS, decreasing = FALSE),]  #按得分PTS 降序排列数据
 

@@ -18,7 +18,7 @@ tags:
 
 2. EXCEL默认的饼图配色大家见的太多后容易审美疲劳。我们可以用一种饼图的变体来解决一下上面的问题，“面包圈”图闪亮登场。
 
-02
+![bingtu](/media/files/2013/12/bingtu.png)
 
 资料来源：TU DelftX
 
@@ -28,7 +28,7 @@ tags:
 
 有时候数据指标比较多的情况下，很难用简单的图表来表达，这时候可以试试HeatMap，可以在二维平面上展示矩阵形式的数据。在这个例子里我们还是用到了NBA数据，简单说就是展示了不同球员的各项指标，于之前文章中提到的“脸图”不同，这种展示方式数据更加直观。在本例中洋红到浅蓝表示数据值由高到低。
 
-	heatmap
+![heatmap](/media/files/2013/12/heatmap.png)
 	
 	bball <- read.csv("http://datasets.flowingdata.com/ppg2008.csv", header = TRUE)
 	
