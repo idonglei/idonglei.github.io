@@ -1,5 +1,5 @@
 ---
-title: Interesting Physics 1 | 有趣的物理（1）
+title: Interesting Physics 1 | 有趣的物理 1
 layout: post
 tags:
   - Physics

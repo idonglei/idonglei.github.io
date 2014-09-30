@@ -1,5 +1,5 @@
 ---
-title: Visualize This 7 | 数据可视化笔记(7)
+title: Visualize This 7 | 数据可视化笔记 7
 layout: post
 tags:
   - Visualization

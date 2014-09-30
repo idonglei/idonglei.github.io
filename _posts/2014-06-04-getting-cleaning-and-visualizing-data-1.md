@@ -1,5 +1,5 @@
 ---
-title: Getting Cleaning and Visualizing Data (1) | 数据获取分析与表达（1）
+title: Getting Cleaning and Visualizing Data 1 | 数据获取分析与表达 1
 layout: post
 tags:
   - Data

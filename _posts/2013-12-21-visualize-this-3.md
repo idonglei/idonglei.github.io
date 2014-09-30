@@ -1,5 +1,5 @@
 ---
-title: Visualize This 3 | 数据可视化笔记(3)
+title: Visualize This 3 | 数据可视化笔记 3
 layout: post
 tags:
   - Data

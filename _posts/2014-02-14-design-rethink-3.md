@@ -1,5 +1,5 @@
 ---
-title: Design Rethink 3 | 设计反思(3)——关于参数化
+title: Design Rethink 3 | 设计反思 3 ——关于参数化
 layout: post
 tags:
   - Design

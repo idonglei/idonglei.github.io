@@ -1,5 +1,5 @@
 ---
-title: Talk With Prof. Qin 2 | 与秦老师的讨论(2)
+title: Talk With Prof. Qin 2 | 与秦老师的讨论 2
 layout: post
 tags:
   - Essay
