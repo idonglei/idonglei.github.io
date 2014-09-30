@@ -1,5 +1,5 @@
 ---
-title: Design Rethink 2 | 设计反思（2）——对人、对生活的关注
+title: Design Rethink 2 | 设计反思 2 ——对人、对生活的关注
 layout: post
 tags:
   - Design

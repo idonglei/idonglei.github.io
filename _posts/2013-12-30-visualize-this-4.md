@@ -13,7 +13,7 @@ tags:
 
 基础资料：0)数据，这个因人而异；1）矢量中国地图（搜索引擎很容易找到）；2）配色方案，可参考一个不错的网站ColorBrewer；3）软件工具：AI（illustrator）
 
-另外，强烈推荐经常看一下经济学人杂志的图表，我认为是所有出版物中做的比较好的。（比如这个[关于中国省市经济情况的](http://www.economist.com/content/chinese_equivalents)）
+另外，强烈推荐经常看一下**经济学人杂志的图表**，我认为是所有出版物中做的比较好的。（比如这个[关于中国省市经济情况](http://www.economist.com/content/chinese_equivalents)）
 
 基础数据、地图、工具准备好后，就可以方便做出一个比较简单的可视化效果：
 
