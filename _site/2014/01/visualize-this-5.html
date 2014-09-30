@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="donglei" />
+    
+    <title>Visualize This 5 | 数据可视化笔记 5</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/atom.xml" rel="alternate" title="DongLei's Blog" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/github.css">
+    <link rel="stylesheet" href="/media/css/fontawesome.css">
+    <script src="/media/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+    
+    <!--highlight.js Start-->
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/mono-blue.min.css">
+        <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script>
+      hljs.configure({tabReplace: ' '})
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <!--highlight.js End-->
+  
+    <!--mathjax start-->
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--mathjax end-->
+
+  </head>
+  <body>
+      <div id="main" role="main">
+        <header>
+          <div id="header">
+            <h1><a title="DongLei's Blog" class="" href="/">DongLei's Blog</a></h1>
+          </div>
+          <nav>
+            
+            <span><a title="Archive" href="/archive.html"><i class="fa fa-list-ul"></i></a></span>
+            
+            <span><a title="Tags" href="/tags.html"><i class="fa fa-tags"></i></a></span>
+            
+            <span><a title="About" href="/about.html"><i class="fa fa-user"></i></a></span>
+            
+            <span><a title="Gallery" href="http://donglei.name"><i class="fa fa-film"></i></a></span>
+            
+            <span><a title="Toolkit" href="/toolkit.html"><i class="fa fa-link"></i></a></span>
+            
+            <span><a title="Subscribe" href="/atom.xml"><i class="fa fa-rss"></i></a></span>
+            
+          </nav>
+        </header>
+        <div id="content">
+        <article>
+  <section class="title">
+    <h2>Visualize This 5 | 数据可视化笔记 5 </h2>
+  </section>
+
+  <section class="meta">
+  <span class="time">
+    <time datetime="2014-01-14">2014-01-14</time>
+  </span>
+
+  
+  <span class="tags">
+    
+    <a href="/tags.html#Data" title="Data">#Data</a>
+    
+    <a href="/tags.html#Visualization" title="Visualization">#Visualization</a>
+    
+  </span> 
+  
+
+  </section>
+  <section class="post">
+  <h3>Network Science</h3>
+
+<p>net00</p>
+
+<p>今天我来试着理解一下“网络图”。上面这张图是我画的一种网络关系图，可以是某群体内相互间的朋友关系，也可以是不同公司间的合作关系。</p>
+
+<p>数据来源为: Social and Economic Networks: Models and Analysis, Matthew O. Jackson</p>
+
+<p>用到的软件为：Gephi（免费软件，支持OS X和Windows）下载：https://gephi.org/</p>
+
+<p>网络图制作起来并不容易，但有助于理解隐藏在现象背后的规律，特别是涉及到多个调查对象相互关系的规律。加上现在数据丰富程度逐渐增加，关于社交网络数据的挖掘成了社会科学领域不可忽视的一股潮流。在Matthew O. Jackson的课上，他给出了一张特别有意思的关于“关系”的图：</p>
+
+<p>net01</p>
+
+<p>这张图是三位学者调查了一个学校的同学间“关系”（原文叫High School Romance）得到的一张图表。黑点代表男性，灰点代表女性，亮点很多，大家可以自行寻找：）</p>
+
+<p>网络科学的研究除了社会网络还有非常广阔的应用领域，C.A. Hidalgo等人在Science上写了一篇文章The Product Space Conditions Development of Nations, 讲了一个关于国家产业网络的很有意思的故事，推荐感兴趣的人读读原文。 文章的图画得很精彩，我贴到下面：</p>
+
+<p>science01</p>
+
+<p>作者在摘要里写道：</p>
+
+<blockquote><p>Economies grow by upgrading the type of products they produce and export. The technology, capital, institutions and skills needed to make such new products are more easily adapted from some products than others. We study the network of relatedness between products, or ‘product space’, finding that most upscale products are located in a densely connected core while lower income products occupy a less connected periphery. <strong>We show that countries tend to move to goods close to those they are currently specialized in, allowing nations located in more connected parts of the product space to upgrade their exports basket more quickly. Most countries can reach the core only if they “jump” over empirically infrequent distances in the product space. This may help explain why poor countries have trouble developing more competitive exports, failing to converge to the income levels of rich countries.</strong></p></blockquote>
+
+<p>上图描述了<strong>产业网络</strong>。网络里面的节点代表不同产业，网络中心是深加工产品（most upscale products），网络边缘是原材料等。图有如下几个特征：</p>
+
+<ul>
+<li>1）网络密集的地方连接也密集（网络中部），而网络稀疏的地方连接也少，网络边缘的连接非常少，比如说fishing&amp;animal agriculture。</li>
+<li>2）每个产业间的连接刻划两种产品在生产过程中的联系，外围产品是中心产品的原材料，中心产品也可以给外围提供服务。</li>
+<li>3）连线的颜色对应两种产品的“相似度”。（生产它们时候需要的生产要素的相似性，如劳动，技术，资本等）。</li>
+<li>4）同类型的产业被画成一种颜色。</li>
+<li>5）节点的大小代表年交易量。（3-5点的见右上角图例说明）</li>
+</ul>
+
+
+<h3>关于PHD</h3>
+
+<p>之前有幅很经典的图是说PHD相当于在知识的圆圈边缘搞一个小“突起”（创新），这张网络图也可以用来解释一下PHD这种生物的活动。不管抱的什么样的目标，可以说读PHD缩小了职业选择空间（就知识学习而言走到了网络边缘）。 如果你不是特别喜欢做研究，PHD的价值就要体现在三五年时间对一个人（非专业知识）的塑造，比如体系化写作的能力，归纳、演绎、分类、整理的能力，甚至还有耐得住寂寞的能力：）</p>
+
+<p>PHD这种生物在进行一项叫科学研究的工作，而科学研究本身也是一个网络结构(下面一张图是学者总结的目前学术研究的网络)。PHD们每个人都从自己的学科背景在网络中的探索。中心节点互相联通，因为解决它们所需要的基本要素是相通的。而且很多时候一些学科看似很难的突破，在别的领域已经是成熟的研究方法，像城市研究中对经济、对社会学、人类学的关注在各自相关领域都相对成熟。但科研人员往往有捍卫领地的趋势，想在不同节点游走并不容易。</p>
+
+<p>net02</p>
+
+<p>Johan Bollen等，Clickstream Data Yields High-Resolution Maps of Science</p>
+
+<p>这次小博客的重点不在于解读这些图，主要想展示网络结构图的魅力和可以应用的领域，同时感兴趣的可以试试Gephi软件及Cousera上Matthew O. Jackson教授开的课程：Social and Economic Networks: Models and Analysis</p>
+
+<p>参考资料：http://blog.renren.com/blog/243098220/904987290</p>
+
+  </section>
+  <div class="divider">
+    <span>
+    
+    <a href="/2014/01/talk-with-prof-qin-2.html"><i class="fa fa-chevron-left"></i></a>
+    
+    </span>
+
+    <span>
+    
+    <a href="/2014/01/interesting-physics-1.html"><i class="fa fa-chevron-right"></i></a>
+    
+    </span>
+  </div>
+  <div class="comment">
+      
+          
+          <div class="ds-thread"></div>
+          
+      
+  </div>  
+</article>
+
+        </div>
+        <footer>
+          <div>
+            
+            &copy; 2013 ~ 2014 donglei | powered by jekyll | themed by <a href="http://lhzhang.com" title="sext vi">sext vi</a>
+          </div>
+        </footer>
+      </div> <!-- main -->
+      <script src="/media/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+      
+            
+                
+                <script type="text/javascript">
+                    var duoshuoQuery = {short_name:"donglei"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = 'http://static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                
+            
+        
+  </body>
+</html>
