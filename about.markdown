@@ -6,7 +6,7 @@ layout: page
 Dong Lei | 董磊
 
 > 2011-now | Ph.D. Candidate | School of Architecture | Tsinghua University.  
-> 2008-2012 | B.A. | School of Economics and Management | Tsinghua University.  
+> 2008-2012 | B.E. | School of Economics and Management | Tsinghua University.  
 > 2007-2011 | B.A. | School of Architecture | Tsinghua University.  
 > Research interest: Spatial Analysis | Urban Dynamics.  
 > I'm also interested in Complex Science | Data Visualization | Python | R.
