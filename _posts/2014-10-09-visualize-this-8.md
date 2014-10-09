@@ -25,6 +25,8 @@ $$
 
 ![ChinaGDPWage](/media/files/2014/10/ChinaGDPWage.png)
 
+横轴是GDP，纵轴是工资，理论上GDP相对不那么高，工资比较高的城市应该是生活比较幸福的，因为相对购买力比较强，而那些GDP很高但工资很低的城市就比较悲惨。（数据说明：统计范围是二百多个中国城市市辖区，人口数据来自六普，GDP和工资数据来自2011年城市统计年鉴。）
+
 代码如下：
 
 	# coding: utf-8
@@ -35,7 +37,6 @@ $$
 	import matplotlib.pyplot as plt
 	
 	data = pandas.read_table(r"test01.csv",sep=";")
-	
 	
 	r = np.sqrt(data["StdResiGDP"]**2 + data["StdResiWage"]**2)
 	
