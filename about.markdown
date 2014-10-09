@@ -16,7 +16,7 @@ Dong Lei | 董磊
 2007-2011年 | 建筑学学士 | 清华大学建筑学院  
 研究兴趣：空间分析 | 城市演化
 
-adress 
+address 
 
 > School of Architecture | Tsinghua University | Beijing | China | 100084
 
