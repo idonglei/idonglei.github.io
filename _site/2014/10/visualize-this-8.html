@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="donglei" />
     
-    <title>Beliefs Affect You | 有时候，信念会潜移默化影响你</title>
+    <title>Visualize This 8 | 数据可视化笔记 8</title>
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="/atom.xml" rel="alternate" title="DongLei's Blog" type="application/atom+xml" />
@@ -55,69 +55,92 @@
         <div id="content">
         <article>
   <section class="title">
-    <h2>Beliefs Affect You | 有时候，信念会潜移默化影响你 </h2>
+    <h2>Visualize This 8 | 数据可视化笔记 8 </h2>
   </section>
 
   <section class="meta">
   <span class="time">
-    <time datetime="2013-12-24">2013-12-24</time>
+    <time datetime="2014-10-09">2014-10-09</time>
   </span>
 
   
   <span class="tags">
     
-    <a href="/tags.html#Essay" title="Essay">#Essay</a>
+    <a href="/tags.html#Data" title="Data">#Data</a>
+    
+    <a href="/tags.html#Visualization" title="Visualization">#Visualization</a>
+    
+    <a href="/tags.html#Illustrator" title="Illustrator">#Illustrator</a>
+    
+    <a href="/tags.html#Python" title="Python">#Python</a>
     
   </span> 
   
 
   </section>
   <section class="post">
-  <p>今天整理笔记，突然翻到2013年1月18号写下几十个字，心底莫名被触动了一下。</p>
+  <p>最近又尝试了几种新的可视化方法。一个是试了下Python中的pandas这个包，可以增强Python处理数据的能力，用起来跟R一样方便，顺便试了试Bettencourt在<a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0013541#abstract0">PLOS ONE文章</a>中写的一种处理平均数的办法。简单的说，因为像GDP等变量随人口的变化不是线性的，而是异速增长，有个幂率系数，那么用人均GDP衡量城市可能会出现一个问题就是：大的城市人口多，天生人均GDP也高，如何消除这个影响呢？他们用GDP除以人口的一个幂次，这个幂次是由人口和GDP取双对数回归得出出的系数。用公式来表示就是，因为：</p>
 
-<p>近一年我从来没有再看过这几十个字，但每一条都如冥冥中的安排，被一点一点变成现实。用恶俗的高考作文手法呼应标题的话就是：有时候，信念会潜移默化影响你。</p>
+<p>$$
+GDP = A * Population^\beta
+$$</p>
 
-<p>这几十个字是这么写的：</p>
+<p>那么，我在算人均GDP的时候，为了消除这个规模效应的影响就可以这样算：</p>
 
-<ul>
-<li>学会Python</li>
-<li>TOEFL 100</li>
-<li>读50本书</li>
-<li>发两篇文章</li>
-<li>游一万米，跑三百公里，骑一千公里</li>
-<li>写五万字笔记、二百篇札记</li>
-<li>去一次日本</li>
-</ul>
+<p>$$
+\epsilon = \log \frac{GDP}{A * Population^\beta}
+$$</p>
+
+<p>这样可以比不同指标之间消除城市规模效应后的影响。我也简单用Python画了一个中国的情况：</p>
+
+<p><img src="/media/files/2014/10/ChinaGDPWage.png" alt="ChinaGDPWage" /></p>
+
+<p>横轴是GDP，纵轴是工资，理论上GDP相对不那么高，工资比较高的城市应该是生活比较幸福的，因为相对购买力比较强，而那些GDP很高但工资很低的城市就比较悲惨。（数据说明：统计范围是二百多个中国城市市辖区，人口数据来自六普，GDP和工资数据来自2011年城市统计年鉴。）</p>
+
+<p>代码如下：</p>
+
+<pre><code># coding: utf-8
+
+import pandas
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = pandas.read_table(r"test01.csv",sep=";")
+
+r = np.sqrt(data["StdResiGDP"]**2 + data["StdResiWage"]**2)
+
+theta = np.arctan2(data["StdResiWage"],data["StdResiGDP"])
+area = 40 * r**2
+colors = r
+
+ax = plt.subplot(111, polar=True)
+c = plt.scatter(theta, r, c=colors, s=area, cmap=plt.cm.rainbow)
+c.set_alpha(0.75)
 
 
-<p>现在回头一看，一年过去了，</p>
+plt.show()
+</code></pre>
 
-<ul>
-<li>Python学习了一些初步的知识，正在针对性解决实际问题。​（完成度80%）</li>
-<li>TOEFL在为SDC焦头烂额的4月裸考了一把，开始没到100，作文复议，过了100。（完成度100%）</li>
-<li>50本书肯定是有的，还有了写笔记的习惯。（完成度100%）</li>
-<li>写了一篇文章，能不能发还不知道。SDC蹭了两篇，小惭愧。（完成度70%）</li>
-<li>运动这一项因为五月之后的身体原因大幅度降低，大概只游了五千米到八千米左右；几乎没有跑步，但走路上下学；自行车骑了约八百公里。（完成度70%）</li>
-<li>五万字笔记差不多，没有具体统计字数。Evernote一年的札记大概一百篇左右。（完成度60%）</li>
-<li>日本没去过，但去了次美国、墨西哥。（完成度0%）</li>
-</ul>
+<hr />
 
+<p>另外，最近做文献综述，用illustrator把复杂科学(Complex Science)的研究脉络梳理了下，从上到下大致是：数学、几何领域；生物领域；自组织、网络科学领域，控制论、与社会经济领域；计算机仿真领域。主要基于<a href="http://www.art-sciencefactory.com/complexity-map_feb09.html">前人的工作</a>重新绘制了一遍，添加了关于城市研究的一些组织和个人。</p>
 
-<p>这一年和大家一起完成了第一个房子，定了论文方向，读了点文献，捣鼓了个博客，出了本杂志，认识了许多朋友。</p>
+<p><img src="/media/files/2014/10/complexity-small.png" alt="complexity-small" /></p>
 
-<p>再恶俗地呼应下标题：<strong>比想法更重要的，是执行力；比行动更重要的，是目标；比坚持更重要的，是反省力；比勇气更重要的，是信仰。</strong></p>
+<p>我还从头梳理了一下城市实证研究方面自1900年以来重要的思想和模型，到时候一并放上来。</p>
 
   </section>
   <div class="divider">
     <span>
     
-    <a href="/2013/12/visualize-this-3.html"><i class="fa fa-chevron-left"></i></a>
+    <a href="/2014/09/notes-2.html"><i class="fa fa-chevron-left"></i></a>
     
     </span>
 
     <span>
     
-    <a href="/2013/12/visualize-this-4.html"><i class="fa fa-chevron-right"></i></a>
+    <i class="fa fa-circle"></i>
     
     </span>
   </div>

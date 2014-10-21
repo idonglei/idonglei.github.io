@@ -57,9 +57,9 @@ MUJI AWARD 04以**“生活中的恒久设计”（Long Lasting Design for Livin
 
 ![muji02_01](/media/files/2014/05/muji02_01.jpg)
 
-![muji02_01](/media/files/2014/05/muji02_01.jpg)
+![muji02_02](/media/files/2014/05/muji02_02.jpg)
 
-![muji02_01](/media/files/2014/05/muji02_01.jpg)
+![muji02_03](/media/files/2014/05/muji02_03.jpg)
 
 小石头造型的粉笔。
 
