@@ -56,7 +56,9 @@ tags:
 
 创新的可能性还远没有被穷尽。技术的发展不断为设计理念提供新的起点，以提升产品可用性。但设计的革新总应与技术的革新相连，永远不要为了设计革新而革新。
 
-**Good design is innovative.(Gutes Design ist innovativ.)**
+**Good design is innovative**
+
+**Gutes Design ist innovativ**
 
 It does not copy existing product forms, nor does it produce any kind of novelty for the sake of it. The essence of innovation must be clearly seen in all functions of a product. The possibilities in this respect are by no means exhausted. Technological development keeps offering new chances for innovative solutions.
 
@@ -160,7 +162,7 @@ It is nothing trendy that might be out-of-date tomorrow. This is one of the majo
 
 Thoroughness and accuracy of design are synonymous with the product and its functions, as seen through the eyes of the user.  
 
-![ET66](/media/files/2014/10/DieterRams/E66.jpg)
+![ET66](/media/files/2014/10/DieterRams/ET66.jpg)
 
 ET 66 计算器, 1987,Dietrich Lubs为布朗公司设计。
 
