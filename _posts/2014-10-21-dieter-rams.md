@@ -6,13 +6,13 @@ tags:
   
 ---
 
-今天无意中听到荔枝FM中一位设计师讲对她影响最大的工业设计师是迪特·拉姆斯，我自己也对他的作品非常着迷。把手头上搜集到的一些相关资料都放在这里，不定期更新一下。
+今天无意中听到一席中一位设计师讲对她影响最大的工业设计师是迪特·拉姆斯，我自己也对他的作品非常着迷。把手头上搜集到的一些相关资料都放在这里，不定期更新一下。
 
 ![Rams_portrait-01](/media/files/2014/10/DieterRams/Rams_portrait-01-credit-Abisag-Tullmann.jpeg)
 
 年轻时的Dieter Rams (Credit: Abisag Tullmann)
 
-####简介
+###简介
 
 迪特·拉姆斯（Dieter Rams，1932年5月20日－）是德国著名的工业设计师，出生于德国黑森邦威斯巴登市，与德国家电制造商百灵（博朗）和机能主义设计学派有很密切的关系。
 
@@ -25,7 +25,7 @@ tags:
 以上来自维基百科中文版[迪特·拉姆斯](http://zh.wikipedia.org/wiki/%E8%BF%AA%E7%89%B9%C2%B7%E6%8B%89%E5%A7%86%E6%96%AF)词条。
 
 
-####设计十戒
+###设计十戒
 
 拉姆斯提出的好的设计（gutes Design）应具备的十项原则广为流传，原文是德语版，后又有英语版和中文版。
 
@@ -52,7 +52,7 @@ tags:
 ![DR_10](/media/files/2014/10/DieterRams/10.jpg)
 
 
-#####好的设计是创新的
+####好的设计是创新的
 
 创新的可能性还远没有被穷尽。技术的发展不断为设计理念提供新的起点，以提升产品可用性。但设计的革新总应与技术的革新相连，永远不要为了设计革新而革新。
 
@@ -64,7 +64,7 @@ It does not copy existing product forms, nor does it produce any kind of novelty
 
 TP 1 收音机/唱机组合, 1959,Dieter Rams为布朗公司设计。
 
-#####好的设计是实用的
+####好的设计是实用的
 
 产品是供人使用的，它应履行一定的功能——主要功能以及额外的心理和审美上的功能。好的设计是为了提升产品可用性，与此目的无关甚至相悖的一切都不应加以考虑。
 
@@ -79,7 +79,7 @@ A product is bought in order to be used. It must serve a defined purpose – in 
 MPZ 21 multipress榨汁机, 1972,Dieter Rams and Jürgen Greubel为布朗公司设计。
 
 
-#####好的设计是美的
+####好的设计是美的
 
 产品的审美品质也是实用性的一部分，日常使用的器具影响着人们的生活环境和幸福感受。但只有真正优秀的产品才能是美的。
 
@@ -94,7 +94,7 @@ The aesthetic quality of a product – and the fascination it inspires – is an
 RT 20 tischsuper收音机, 1961,Dieter Rams为布朗公司设计。
 
 
-#####好的设计使产品易于理解
+####好的设计使产品易于理解
 
 设计应当以合理方式表明产品结构，让产品说话。最好的设计是自明的，它能够自己解释自己。
 
@@ -108,7 +108,7 @@ It clarifies the structure of the product. Better still, it can make the product
 
 T 1000 收音机, 1963, Dieter Rams为布朗公司设计。
 
-#####好的设计是谨慎克制的
+####好的设计是谨慎克制的
 
 履行某种功能的产品具有工具属性，它们既不是装饰物也不是艺术品。因此，它们的设计应该是中性的。器具应当隐退，为人的自我实现留出空间。
 
@@ -122,7 +122,7 @@ Products that satisfy this criterion are tools. They are neither decorative obje
 
 圆柱形T2打火机, 1968,Dieter Rams为布朗公司设计。
 
-#####好的设计是诚实的
+####好的设计是诚实的
 
 不要夸张产品本身的创意、功能和价值。也不要试图用实现不了的承诺去欺骗消费者。
  
@@ -136,7 +136,7 @@ An honestly-designed product must not claim features it does not have – being 
 
 L 450 平板扬声器，TG 60开盘式录音机和TS 45控制器, 1962-64,Dieter Rams为布朗公司设计。
 
-#####好的设计是经久永恒的
+####好的设计是经久永恒的
 
 它避免迎合时尚，也因此不会过时。与短命的时尚设计形成鲜明对比，它即使在当今的一次性消费社会里也同样经久不衰。
 
@@ -150,7 +150,7 @@ It is nothing trendy that might be out-of-date tomorrow. This is one of the majo
 
 620椅子, 1962,Dieter Rams for为Vitsoe公司设计。
 
-#####好的设计在极细微处也维持一致
+####好的设计在极细微处也维持一致
 
 任何细节都不能敷衍了事或者怀有侥幸心理。设计的逻辑性和准确性，最终都是表达对消费者的尊重。
 
@@ -160,11 +160,11 @@ It is nothing trendy that might be out-of-date tomorrow. This is one of the majo
 
 Thoroughness and accuracy of design are synonymous with the product and its functions, as seen through the eyes of the user.  
 
-![E66](/media/files/2014/10/DieterRams/E66.jpg)
+![ET66](/media/files/2014/10/DieterRams/E66.jpg)
 
 ET 66 计算器, 1987,Dietrich Lubs为布朗公司设计。
 
-#####好的设计是环保的
+####好的设计是环保的
 
 设计能够为保护环境作出了重要贡献。让产品在整个生命周期内减少对资源的浪费，降低对自然的破坏并且不要产生视觉污染。
 
@@ -178,7 +178,7 @@ Design must contribute towards a stable environment and a sensible use of raw ma
 
 606 通用搁架, 1960,Dieter Rams为Vitsœ公司设计。
 
-#####好的设计是简洁的
+####好的设计是简洁的
 
 设计应当回归纯粹，回归简单。
 
@@ -203,7 +203,7 @@ L 2扬声器, 1958,Dieter Rams为布朗公司设计。
 ![DR_principles2](/media/files/2014/10/DieterRams/DR_english_ten_principles2.jpg)
 
 
-####设计作品
+###设计作品
 
 拉姆斯的作品影响了包括苹果公司、无印良品在内的一代又一代的设计企业，突然发现荔枝FM的APP也从他的收音机设计中借鉴了一少。
 
