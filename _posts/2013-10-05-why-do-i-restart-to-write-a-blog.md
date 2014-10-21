@@ -2,7 +2,7 @@
 title: Why Do I Restart to Write A Blog | 为什么重新开始写博客
 layout: post
 tags:
-  -Essay
+  - Essay
 
 ---
   
