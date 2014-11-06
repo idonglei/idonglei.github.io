@@ -1,5 +1,5 @@
 ---
-title: Quality/Price, Product Pricing Strategy | 质量/价格，产品的定价策略（慎入）
+title: Quality/Price, Product Pricing Strategy | 质量/价格，产品的定价策略
 layout: post
 tags:
   - Economics
