@@ -20,28 +20,27 @@ comment: true
     {% endfor %}
   </span> 
   {% endif %}
-
   </section>
+
   <section class="post">
   {{ content }}
   </section>
+
   <div class="divider">
-    <span>
     {% if page.previous %}
     <a href="{{ page.previous.url }}"><i class="fa fa-chevron-left"></i></a>
     {% else %}
     <i class="fa fa-circle"></i>
     {% endif %}
-    </span>
 
-    <span>
     {% if page.next %}
     <a href="{{ page.next.url }}"><i class="fa fa-chevron-right"></i></a>
     {% else %}
     <i class="fa fa-circle"></i>
     {% endif %}
-    </span>
   </div>
+
+
   <div class="comment">
       {% if site.disqus.config %}
       <div id="disqus_thread"></div>

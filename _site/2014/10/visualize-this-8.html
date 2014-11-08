@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="donglei" />
+
     
     <title>Visualize This 8 | 数据可视化笔记 8</title>
     
@@ -13,23 +14,23 @@
     <link rel="stylesheet" href="/media/css/fontawesome.css">
     <script src="/media/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
 
-    
     <!--highlight.js Start-->
-        <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/mono-blue.min.css">
-        <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/mono-blue.min.css">
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
     <script>
       hljs.configure({tabReplace: '    '});
       hljs.initHighlightingOnLoad();
     </script>
     <!--highlight.js End-->
   
-    <!--mathjax start-->
+    <!--mathjax Start-->
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-    <!--mathjax end-->
-
+    <!--mathjax End-->
   </head>
+
+  <!--Main Body-->
   <body>
       <div id="main" role="main">
         <header>
@@ -52,6 +53,7 @@
             
           </nav>
         </header>
+
         <div id="content">
         <article>
   <section class="title">
@@ -76,8 +78,8 @@
     
   </span> 
   
-
   </section>
+
   <section class="post">
   <p>最近又尝试了几种新的可视化方法。一个是试了下Python中的pandas这个包，可以增强Python处理数据的能力，用起来跟R一样方便，顺便试了试Bettencourt在<a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0013541#abstract0">PLOS ONE文章</a>中写的一种处理平均数的办法。简单的说，因为像GDP等变量随人口的变化不是线性的，而是异速增长，有个幂率系数，那么用人均GDP衡量城市可能会出现一个问题就是：大的城市人口多，天生人均GDP也高，如何消除这个影响呢？他们用GDP除以人口的一个幂次，这个幂次是由人口和GDP取双对数回归得出出的系数。用公式来表示就是，因为：</p>
 
@@ -131,19 +133,18 @@ plt.show()
 <p>我还从头梳理了一下城市实证研究方面自1900年以来重要的思想和模型，到时候一并放上来。</p>
 
   </section>
+
   <div class="divider">
-    <span>
     
     <a href="/2014/09/notes-2.html"><i class="fa fa-chevron-left"></i></a>
     
-    </span>
 
-    <span>
     
     <a href="/2014/10/natural-science-social-science.html"><i class="fa fa-chevron-right"></i></a>
     
-    </span>
   </div>
+
+
   <div class="comment">
       
           
@@ -154,13 +155,15 @@ plt.show()
 </article>
 
         </div>
+
         <footer>
           <div>
             
             &copy; 2013 ~ 2014 donglei | powered by jekyll | themed by <a href="http://lhzhang.com" title="sext vi">sext vi</a>
           </div>
         </footer>
-      </div> <!-- main -->
+
+      </div> 
 
       <!--Comment Start-->
       <script src="/media/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -168,6 +171,7 @@ plt.show()
             
                 
                 <script type="text/javascript">
+                    //duoshou
                     var duoshuoQuery = {short_name:"donglei"};
                     (function() {
                         var ds = document.createElement('script');
@@ -192,7 +196,6 @@ plt.show()
 
       ga('create', 'UA-44607213-2', 'auto');
       ga('send', 'pageview');
-
     </script>
     <!--Google Analytics End-->
 

@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="donglei" />
+
     
     <title>DongLei's Blog</title>
     
@@ -13,23 +14,23 @@
     <link rel="stylesheet" href="/media/css/fontawesome.css">
     <script src="/media/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
 
-    
     <!--highlight.js Start-->
-        <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/mono-blue.min.css">
-        <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/mono-blue.min.css">
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
     <script>
       hljs.configure({tabReplace: '    '});
       hljs.initHighlightingOnLoad();
     </script>
     <!--highlight.js End-->
   
-    <!--mathjax start-->
+    <!--mathjax Start-->
     <script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-    <!--mathjax end-->
-
+    <!--mathjax End-->
   </head>
+
+  <!--Main Body-->
   <body>
       <div id="main" role="main">
         <header>
@@ -52,6 +53,7 @@
             
           </nav>
         </header>
+
         <div id="content">
         <div>
   <ul class="listing">
@@ -99,6 +101,202 @@
 
 
 <p>现在一个小问题是，如果是我自己用D3画的图，怎么直接放上来而不是通过引用的方式，且待我好好琢磨琢磨。</p>
+
+<hr />
+
+<h3>11月8日更新</h3>
+
+<p>今天终于把怎么在Jekyll里插入D3的动态可视化图整了个七七八八，核心是要在图的前后代码处插入<code>&lt;AAA&gt;</code> <code>&lt;\AAA&gt;</code> ，这里字母随意，然后把D3中select“body”之类的命令中的"body"全换成对应的"AAA"。</p>
+
+<p>让我们看个例子：（鼠标拖拽能动噢，画法请右击查看源代码）</p>
+
+<p><example1></p>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+
+
+//Width and height
+var w = 600;
+var h = 300;
+
+//Original data
+var dataset = {
+    nodes: [
+        { name: "Adam" },
+        { name: "Bob" },
+        { name: "Carrie" },
+        { name: "Donovan" },
+        { name: "Edward" },
+        { name: "Felicity" },
+        { name: "George" },
+        { name: "Hannah" },
+        { name: "Iris" },
+        { name: "Jerry" }
+    ],
+    edges: [
+        { source: 0, target: 1 },
+        { source: 0, target: 2 },
+        { source: 0, target: 3 },
+        { source: 0, target: 4 },
+        { source: 1, target: 5 },
+        { source: 2, target: 5 },
+        { source: 2, target: 5 },
+        { source: 3, target: 4 },
+        { source: 5, target: 8 },
+        { source: 5, target: 9 },
+        { source: 6, target: 7 },
+        { source: 7, target: 8 },
+        { source: 8, target: 9 }
+    ]
+};
+
+//Initialize a default force layout, using the nodes and edges in dataset
+var force = d3.layout.force()
+                     .nodes(dataset.nodes)
+                     .links(dataset.edges)
+                     .size([w, h])
+                     .linkDistance([50])
+                     .charge([-100])
+                     .start();
+
+var colors = d3.scale.category10();
+
+//Create SVG element
+var svg = d3.select("example1")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+//Create edges as lines
+var edges = svg.selectAll("line")
+    .data(dataset.edges)
+    .enter()
+    .append("line")
+    .style("stroke", "#ccc")
+    .style("stroke-width", 1);
+
+//Create nodes as circles
+var nodes = svg.selectAll("circle")
+    .data(dataset.nodes)
+    .enter()
+    .append("circle")
+    .attr("r", 10)
+    .style("fill", function(d, i) {
+        return colors(i);
+    })
+    .call(force.drag);
+
+//Every time the simulation "ticks", this will be called
+force.on("tick", function() {
+
+    edges.attr("x1", function(d) { return d.source.x; })
+         .attr("y1", function(d) { return d.source.y; })
+         .attr("x2", function(d) { return d.target.x; })
+         .attr("y2", function(d) { return d.target.y; });
+
+    nodes.attr("cx", function(d) { return d.x; })
+         .attr("cy", function(d) { return d.y; });
+
+});
+
+</script>
+
+
+<p></example1></p>
+
+<p>另一个例子：</p>
+
+<p><example2></p>
+
+<script>
+
+var width = 600,
+    height = 400;
+
+var colors = [
+  "rgb(197,27,125)",
+  "rgb(222,119,174)",
+  "rgb(241,182,218)",
+  "rgb(253,224,239)",
+  "rgb(247,247,247)",
+  "rgb(230,245,208)",
+  "rgb(184,225,134)",
+  "rgb(127,188,65)",
+  "rgb(77,146,33)"
+];
+
+var sites = d3.range(50).map(function(d) {
+  return [Math.random() * width, Math.random() * height];
+});
+
+var voronoi = d3.geom.voronoi();
+
+var canvas = d3.select("example2").append("canvas")
+    .attr("width", width)
+    .attr("height", height)
+    .on("mousemove", function() { sites[0] = d3.mouse(this); redraw(); });
+
+var context = canvas.node().getContext("2d");
+
+redraw();
+
+function redraw() {
+  var cells = voronoi(sites);
+
+  context.clearRect(0, 0, width, height);
+
+  context.fillStyle = "yellow";
+  draw(cells[0]);
+  context.fill();
+
+  for (var k = 0, l = colors.length; k < l; ++k) {
+    context.fillStyle = colors[k];
+    for (var i = 1, n = cells.length; i < n; ++i) {
+      if (i % l === k && draw(cells[i])) context.fill();
+    }
+  }
+
+  context.strokeStyle = "white";
+  for (var i = 0, n = cells.length; i < n; ++i) {
+    if (draw(cells[i])) context.stroke();
+  }
+
+  context.fillStyle = "black";
+  for (var i = 1, n = sites.length, site; i < n; ++i) {
+    site = sites[i];
+    context.beginPath();
+    context.arc(site[0], site[1], 1.5, 0, 2 * Math.PI, false);
+    context.fill();
+  }
+}
+
+function draw(cell) {
+  if (cell) {
+    context.beginPath();
+    context.moveTo(cell[0][0], cell[0][1]);
+    for (var j = 1, m = cell.length; j < m; ++j) {
+      context.lineTo(cell[j][0], cell[j][1]);
+    }
+    context.closePath();
+    return true;
+  }
+}
+
+</script>
+
+
+<p></example2></p>
+
+<p>现在还没有解决的一个问题有两个：</p>
+
+<ol>
+<li>如何给每个图形创建不同的css格式；</li>
+<li>如何引用本地的csv、json等文件来画图，那样才可以创建真正丰富多彩的图形。</li>
+</ol>
+
 
     </section>
     </article>
@@ -307,13 +505,15 @@
 
 
         </div>
+
         <footer>
           <div>
             
             &copy; 2013 ~ 2014 donglei | powered by jekyll | themed by <a href="http://lhzhang.com" title="sext vi">sext vi</a>
           </div>
         </footer>
-      </div> <!-- main -->
+
+      </div> 
 
       <!--Comment Start-->
       <script src="/media/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -329,7 +529,6 @@
 
       ga('create', 'UA-44607213-2', 'auto');
       ga('send', 'pageview');
-
     </script>
     <!--Google Analytics End-->
 
