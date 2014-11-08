@@ -209,86 +209,105 @@ force.on("tick", function() {
 
 <p>另一个例子：</p>
 
-<p><example2></p>
+<p><example3></p>
 
 <script>
-
-var width = 600,
-    height = 400;
-
-var colors = [
-  "rgb(197,27,125)",
-  "rgb(222,119,174)",
-  "rgb(241,182,218)",
-  "rgb(253,224,239)",
-  "rgb(247,247,247)",
-  "rgb(230,245,208)",
-  "rgb(184,225,134)",
-  "rgb(127,188,65)",
-  "rgb(77,146,33)"
+// From http://mkweb.bcgsc.ca/circos/guide/tables/
+var matrix = [
+  [11975,  5871, 8916, 2868],
+  [ 1951, 10048, 2060, 6171],
+  [ 8010, 16145, 8090, 8045],
+  [ 1013,   990,  940, 6907]
 ];
 
-var sites = d3.range(50).map(function(d) {
-  return [Math.random() * width, Math.random() * height];
-});
+var chord = d3.layout.chord()
+    .padding(.05)
+    .sortSubgroups(d3.descending)
+    .matrix(matrix);
 
-var voronoi = d3.geom.voronoi();
+var width = 650,
+    height = 500,
+    innerRadius = Math.min(width, height) * .41,
+    outerRadius = innerRadius * 1.1;
 
-var canvas = d3.select("example2").append("canvas")
+var fill = d3.scale.ordinal()
+    .domain(d3.range(4))
+    .range(["#4dac26", "#b8e186", "#f1b6da", "#d01c8b"]);
+
+var svg = d3.select("example3").append("svg")
     .attr("width", width)
     .attr("height", height)
-    .on("mousemove", function() { sites[0] = d3.mouse(this); redraw(); });
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-var context = canvas.node().getContext("2d");
+svg.append("g").selectAll("path")
+    .data(chord.groups)
+  .enter().append("path")
+    .style("fill", function(d) { return fill(d.index); })
+    .style("stroke", function(d) { return fill(d.index); })
+    .attr("d", d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius))
+    .on("mouseover", fade(.1))
+    .on("mouseout", fade(1));
 
-redraw();
+var ticks = svg.append("g").selectAll("g")
+    .data(chord.groups)
+  .enter().append("g").selectAll("g")
+    .data(groupTicks)
+  .enter().append("g")
+    .attr("transform", function(d) {
+      return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+          + "translate(" + outerRadius + ",0)";
+    });
 
-function redraw() {
-  var cells = voronoi(sites);
+ticks.append("line")
+    .attr("x1", 1)
+    .attr("y1", 0)
+    .attr("x2", 5)
+    .attr("y2", 0)
+    .style("stroke", "#636363");
 
-  context.clearRect(0, 0, width, height);
+ticks.append("text")
+    .attr("x", 8)
+    .attr("dy", ".35em")
+    .attr("transform", function(d) { return d.angle > Math.PI ? "rotate(180)translate(-16)" : null; })
+    .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+    .text(function(d) { return d.label; })
+    .style("fill", "#636363");
 
-  context.fillStyle = "yellow";
-  draw(cells[0]);
-  context.fill();
+svg.append("g")
+    .attr("class", "chord")
+  .selectAll("path")
+    .data(chord.chords)
+  .enter().append("path")
+    .attr("d", d3.svg.chord().radius(innerRadius))
+    .style("fill", function(d) { return fill(d.target.index); })
+    .style("opacity", 0.6)
+    .style("stroke", "#fff");
 
-  for (var k = 0, l = colors.length; k < l; ++k) {
-    context.fillStyle = colors[k];
-    for (var i = 1, n = cells.length; i < n; ++i) {
-      if (i % l === k && draw(cells[i])) context.fill();
-    }
-  }
-
-  context.strokeStyle = "white";
-  for (var i = 0, n = cells.length; i < n; ++i) {
-    if (draw(cells[i])) context.stroke();
-  }
-
-  context.fillStyle = "black";
-  for (var i = 1, n = sites.length, site; i < n; ++i) {
-    site = sites[i];
-    context.beginPath();
-    context.arc(site[0], site[1], 1.5, 0, 2 * Math.PI, false);
-    context.fill();
-  }
+// Returns an array of tick angles and labels, given a group.
+function groupTicks(d) {
+  var k = (d.endAngle - d.startAngle) / d.value;
+  return d3.range(0, d.value, 1000).map(function(v, i) {
+    return {
+      angle: v * k + d.startAngle,
+      label: i % 5 ? null : v / 1000 + "k"
+    };
+  });
 }
 
-function draw(cell) {
-  if (cell) {
-    context.beginPath();
-    context.moveTo(cell[0][0], cell[0][1]);
-    for (var j = 1, m = cell.length; j < m; ++j) {
-      context.lineTo(cell[j][0], cell[j][1]);
-    }
-    context.closePath();
-    return true;
-  }
+// Returns an event handler for fading a given chord group.
+function fade(opacity) {
+  return function(g, i) {
+    svg.selectAll(".chord path")
+        .filter(function(d) { return d.source.index != i && d.target.index != i; })
+      .transition()
+        .style("opacity", opacity);
+  };
 }
-
 </script>
 
 
-<p></example2></p>
+<p></example3></p>
 
 <p>现在还没有解决的一个问题有两个：</p>
 
