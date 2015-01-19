@@ -21,9 +21,9 @@ navigations:
   - title: Gallery
     class: fa fa-film
     href: http://donglei.name
-  - title: Toolkit
+  - title: D4D
     class: fa fa-link
-    href: /toolkit.html
+    href: /d4d.html
   - title: Subscribe
     class: fa fa-rss
     href: /atom.xml
