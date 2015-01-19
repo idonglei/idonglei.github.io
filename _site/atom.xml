@@ -4,7 +4,7 @@
  <title>DongLei's Blog</title>
  <link href="http://donglei.name/atom.xml" rel="self"/>
  <link href="http://donglei.name"/>
- <updated>2014-11-08T16:39:38+08:00</updated>
+ <updated>2015-01-19T13:37:18-05:00</updated>
  <id>http://donglei.name</id>
  <author>
    <name>donglei</name>
@@ -14,7 +14,7 @@
  <entry>
    <title>Embedding D3 in Jekyll | 将d3.js代码嵌入Jekyll博客</title>
    <link href="http://donglei.name/2014/11/d3-jekylle.html"/>
-   <updated>2014-11-06T00:00:00+08:00</updated>
+   <updated>2014-11-06T00:00:00-05:00</updated>
    <id>http://donglei.name/2014/11/d3-jekylle</id>
    <content type="html">&lt;p&gt;之前不知道Jekyll里还能嵌入d3.js制作的动态可视化图表，今天Google了一下，发现有人做出了回答：&lt;a href=&quot;http://stackoverflow.com/questions/22651346/how-to-embed-a-d3-js-example-to-the-jekyll-blog-post&quot;&gt;Stack Overflow question&lt;/a&gt;，同时又找到了一篇博客介绍怎么写相应的Markdown引用&lt;a href=&quot;http://www.nicksuch.com/2014/03/26/d3-sample/&quot;&gt;文档的说明&lt;/a&gt;。最为关键的是在Markdown文件中添加如下字段（可替换成想引用的图表）：&lt;/p&gt;
 
@@ -171,7 +171,7 @@ svg.append(&quot;g&quot;).selectAll(&quot;path&quot;)
     .style(&quot;stroke&quot;, function(d) { return fill(d.index); })
     .attr(&quot;d&quot;, d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius))
     .on(&quot;mouseover&quot;, fade(.1))
-    .on(&quot;mouseout&quot;, fade(1));
+    .on(&quot;mouseout&quot;, fade(.6));
 
 var ticks = svg.append(&quot;g&quot;).selectAll(&quot;g&quot;)
     .data(chord.groups)
@@ -246,7 +246,7 @@ function fade(opacity) {
  <entry>
    <title>Dieter Rams | 迪特·拉姆斯</title>
    <link href="http://donglei.name/2014/10/dieter-rams.html"/>
-   <updated>2014-10-21T00:00:00+08:00</updated>
+   <updated>2014-10-21T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/10/dieter-rams</id>
    <content type="html">&lt;p&gt;今天无意中听到一席中一位设计师讲对她影响最大的工业设计师是迪特·拉姆斯，我自己也对他的作品非常着迷。把手头上搜集到的一些相关资料都放在这里，不定期更新一下。&lt;/p&gt;
 
@@ -467,7 +467,7 @@ function fade(opacity) {
  <entry>
    <title>Natural Science and Social Science | 《自然科学与社会科学的区别》演讲</title>
    <link href="http://donglei.name/2014/10/natural-science-social-science.html"/>
-   <updated>2014-10-18T00:00:00+08:00</updated>
+   <updated>2014-10-18T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/10/natural-science-social-science</id>
    <content type="html">&lt;blockquote&gt;&lt;p&gt;鉴于这是个个人博客，几乎不转载文章，但这篇赵鼎新教授的演讲非常棒，故在此存档。&lt;/p&gt;&lt;/blockquote&gt;
 
@@ -555,7 +555,7 @@ function fade(opacity) {
  <entry>
    <title>Visualize This 8 | 数据可视化笔记 8</title>
    <link href="http://donglei.name/2014/10/visualize-this-8.html"/>
-   <updated>2014-10-09T00:00:00+08:00</updated>
+   <updated>2014-10-09T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/10/visualize-this-8</id>
    <content type="html">&lt;p&gt;最近又尝试了几种新的可视化方法。一个是试了下Python中的pandas这个包，可以增强Python处理数据的能力，用起来跟R一样方便，顺便试了试Bettencourt在&lt;a href=&quot;http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0013541#abstract0&quot;&gt;PLOS ONE文章&lt;/a&gt;中写的一种处理平均数的办法。简单的说，因为像GDP等变量随人口的变化不是线性的，而是异速增长，有个幂率系数，那么用人均GDP衡量城市可能会出现一个问题就是：大的城市人口多，天生人均GDP也高，如何消除这个影响呢？他们用GDP除以人口的一个幂次，这个幂次是由人口和GDP取双对数回归得出出的系数。用公式来表示就是，因为：&lt;/p&gt;
 
@@ -613,7 +613,7 @@ plt.show()
  <entry>
    <title>Notes 2 | 札记 2</title>
    <link href="http://donglei.name/2014/09/notes-2.html"/>
-   <updated>2014-09-30T00:00:00+08:00</updated>
+   <updated>2014-09-30T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/09/notes-2</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/media/files/2014/09/valse.jpg&quot; alt=&quot;swiss&quot; /&gt;&lt;/p&gt;
 
@@ -630,7 +630,7 @@ plt.show()
  <entry>
    <title>Blog One Year | 博客写作一周年记</title>
    <link href="http://donglei.name/2014/09/blog-one-year.html"/>
-   <updated>2014-09-28T00:00:00+08:00</updated>
+   <updated>2014-09-28T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/09/blog-one-year</id>
    <content type="html">&lt;p&gt;这周收到了服务器运营商发的邮件，提示要交费了，也意味着这个博客到现在已经活了一年。且来盘点一下这一年写过的东西：&lt;/p&gt;
 
@@ -651,7 +651,7 @@ plt.show()
  <entry>
    <title>Raw Data from Figures | 从图片中提取数据</title>
    <link href="http://donglei.name/2014/09/raw-data-from-figures.html"/>
-   <updated>2014-09-05T00:00:00+08:00</updated>
+   <updated>2014-09-05T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/09/raw-data-from-figures</id>
    <content type="html">&lt;p&gt;有时候我们经常会在文献中看到许多图表，特别是一些表示两个变量关系的散点图，但作者往往不一定提供原始数据，我们当然可以想办法联系作者获取原始数据，但有时候这样不但成功率不高，而且像一些早年的文献，可能作者无法联系，甚至原始数据已经无法获得了。&lt;/p&gt;
 
@@ -790,7 +790,7 @@ plt.show()
  <entry>
    <title>Grapefruit | 买柚子风波</title>
    <link href="http://donglei.name/2014/08/grapefruit.html"/>
-   <updated>2014-08-14T00:00:00+08:00</updated>
+   <updated>2014-08-14T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/08/grapefruit</id>
    <content type="html">&lt;p&gt;半年多前在人人上写了个小文，现在准备把之前写的东西好玩的，有存档必要的，逐步迁移到博客上。去社交化，Oh YEAR～&lt;/p&gt;
 
@@ -861,7 +861,7 @@ plt.show()
  <entry>
    <title>Doves | 梁朝伟喂鸽子</title>
    <link href="http://donglei.name/2014/08/doves.html"/>
-   <updated>2014-08-13T00:00:00+08:00</updated>
+   <updated>2014-08-13T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/08/doves</id>
    <content type="html">&lt;p&gt;最近有个好玩儿的事情，起因是这样的。网上有许多“恶搞”物理题目表述，比如这个：&lt;/p&gt;
 
@@ -917,7 +917,7 @@ print &quot;The last dove is:&quot;, doves
  <entry>
    <title>The Three Body | 三体</title>
    <link href="http://donglei.name/2014/08/the-three-body.html"/>
-   <updated>2014-08-03T00:00:00+08:00</updated>
+   <updated>2014-08-03T00:00:00-04:00</updated>
    <id>http://donglei.name/2014/08/the-three-body</id>
    <content type="html">&lt;p&gt;这两天看了刘慈欣的《三体》一和二（黑暗森林），作为经典的科幻作品，直到现在才开始看确实有点说不过去。主要原因可能还是自己这几年的阅读虚构类比重下降严重，更倾向于读非虚构作品，但谁又能说前者不是“真实世界”呢？对于《三体》，说实话第一部看完后印象一般，感觉有种过誉的嫌疑，从科幻上来说有一定功力，但总觉得缺了点什么，因为篇幅短（300页）无法建构一个完善的体系？但第二部给了我眼前一亮的感觉，可以给出5星，特别是其中的黑暗森林法则。不过这里想要先讨论一下大刘的几个宇宙文明公理和引力。&lt;/p&gt;
 
