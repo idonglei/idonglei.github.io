@@ -1,0 +1,8 @@
+<OGRVRTDataSource>
+  <OGRVRTLayer name="input">
+    <SrcDataSource relativeToVRT="1">input.csv</SrcDataSource>
+    <GeometryType>wkbPoint</GeometryType>
+    <LayerSRS>EPSG:2263</LayerSRS>
+    <GeometryField encoding="PointFromColumns" x="X" y="Y" reportSrcColumn="FALSE"/>
+  </OGRVRTLayer>
+</OGRVRTDataSource>
