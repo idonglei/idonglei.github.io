@@ -10,11 +10,11 @@ tags:
   
 最近老是遇到配置Python环境的问题，特别是遇到一些小众一点的包，并没有包括在一些IDE里，所以得各种自己搞。这里写几个常用的方法，主要当做备忘录。
 
-在做空间计算的时候，即便用了numpy，scipy，虽然对于矩阵运算有了很大的提高。但是并没有对类型地理空间数据进行优化，一般要用一个Rtree的算法来减小索引次数，这个算法在Python中有个对应的包。但Rtree需要先装一个叫libspatialindex的包，具体可以去![这里下载安装](http://libspatialindex.github.io/install.html)，有种更简单的办法是用**brew**来装。只用一行命令：
+在做空间计算的时候，即便用了numpy，scipy，虽然对于矩阵运算有了很大的提高。但是并没有对类型地理空间数据进行优化，一般要用一个Rtree的算法来减小索引次数，这个算法在Python中有个对应的包。但Rtree需要先装一个叫libspatialindex的包，具体可以去[这里下载安装](http://libspatialindex.github.io/install.html)，有种更简单的办法是用**brew**来装。只用一行命令：
 
 >brew install spatialindex
 
-然后去![这儿把Rtree下载下来](https://pypi.python.org/pypi/Rtree/0.8.2)，找到相应目录后安装一下：
+然后去[这儿把Rtree下载下来](https://pypi.python.org/pypi/Rtree/0.8.2)，找到相应目录后安装一下：
 
 >python setup.py install
 
