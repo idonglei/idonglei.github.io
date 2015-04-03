@@ -4,12 +4,131 @@
  <title>DongLei's Blog</title>
  <link href="http://donglei.name/atom.xml" rel="self"/>
  <link href="http://donglei.name"/>
- <updated>2015-04-02T21:11:15-04:00</updated>
+ <updated>2015-04-02T21:42:08-04:00</updated>
  <id>http://donglei.name</id>
  <author>
    <name>donglei</name>
  </author>
 
+ 
+ <entry>
+   <title>Mac Update SSD and Ram | Mac硬盘内存升级攻略</title>
+   <link href="http://donglei.name/2015/03/mac-update.html"/>
+   <updated>2015-03-30T00:00:00-04:00</updated>
+   <id>http://donglei.name/2015/03/mac-update</id>
+   <content type="html">&lt;p&gt;相信很多人笔记本用了三四年就会变得非常慢，换电脑不仅是笔不小的开支，熟悉新电脑也需要花时间。那么何不试试升级一下老笔记本，旧貌变新颜，重新获得飞一样的使用感受。&lt;/p&gt;
+
+&lt;p&gt;【注意】：操作有风险，出现问题本文不负责。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;前几天奇异果好奇OSX 10.10 Yosemite系统是种什么样的使用体验，就升级了一把，谁知道no zuo no die，why you try。升级完系统后，电脑出现症状，休眠之后无法唤醒，重起之后无法进入系统。还好奇异果升级前及时备份了所有数据！（一定要养成经常备份的好习惯。）用U盘引导启动后用磁盘修复工具一检查，提示磁盘有错误，建议格式化重装。Oh,卖糕的！&lt;/p&gt;
+
+&lt;p&gt;水果君用的电脑是2011年的15‘MacBook Pro（early 2011款），服役了近四年，又经常拿它算模拟、跑程序，4G的内存严重吃紧，老硬盘的读写速度也极大制约了速度。水果君心一横，一不做，二不休，趁重装电脑的时机，把硬件也更新一下，体验一把站在风口的猪——飞一般的感觉。&lt;/p&gt;
+
+&lt;h4&gt;Step 1 制做U盘启动盘&lt;/h4&gt;
+
+&lt;p&gt;要格式化重装，需要首先制做一个启动盘，OS X的系统免费了，可以从Apple Store上直接下载Yosemite，5G多，8G的U盘就可以装下。下载完成后需要以下操作：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;格式化U盘。打开&quot;磁盘工具&quot;，左边选择要格式化的U盘，右边点抹掉，格式选择第一个，名称保持Untitled（这个主要是为了和后面对应）。（如图1）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开终端（Terminal，见图2），里面输入如下内容：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;blockquote&gt;&lt;p&gt;sudo /Applications/Install OS X Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install OS X Yosemite.app --nointeraction&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;上面这段的意思是把从Apple Store下载的Yosemite用createinstallmedia这个工具放到名为Untitled的U盘里做成启动盘。&lt;a href=&quot;https://support.apple.com/en-us/HT201372&quot;&gt;^1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;Step 2 买硬件&lt;/h4&gt;
+
+&lt;p&gt;我是从美国Amazon上买的，算上税和京东差不多，主要是SSD硬盘，内存和放到光驱的硬盘托，外加一个多功能螺丝刀。&lt;/p&gt;
+
+&lt;h5&gt;硬盘：&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;品牌&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当时备选的有两款，三星和Kingston，三星价格更贵一些，读写速度快一些，保修好像是五年，Kingston是三年，读写慢10%左右。考虑到这次升级估计也就最多再用三四年，选了Kingston，不过之前看升级攻略，网上大多数教程用的是三星。硬件这个东西，一份钱一份货，可以根据实际情况选择。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;容量&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;容易备选是250G和500G两个等级，Kingston比较坑的是只有240G和480G两个选择，比三星略小些。最后选择的是kingston的240G的，把500G的电脑上原来的硬盘也用上，240+500的组合对目前来说够用。（三星容量的还有各种不同版本，价格也差异不少。）&lt;/p&gt;
+
+&lt;p&gt;当时比较的是以下两款：&lt;/p&gt;
+
+&lt;p&gt;Samsung 850 EVO 250GB 2.5-Inch SATA III Internal SSD (MZ-75E250B/AM)&lt;/p&gt;
+
+&lt;p&gt;Kingston Digital 240GB SSDNow V300 SATA 3 2.5-Inch Solid State Drive with Adapter (SV300S37A/240G)&lt;/p&gt;
+
+&lt;h5&gt;内存&lt;/h5&gt;
+
+&lt;p&gt;内存买的Crucial的16GB(8GBx2) DDR3-1600HZ，据说是2011款Mac能支持的最大容量和主频。内存这个东西，大点总没坏处，当然，如果选8G的会便宜不少。&lt;/p&gt;
+
+&lt;h5&gt;硬盘光驱位置托盘&lt;/h5&gt;
+
+&lt;p&gt;这货在英语里叫Hard Drive Caddy Tray for Apple Unibody MacBook，很便宜，质量参差不齐，可以买个贵点的。&lt;/p&gt;
+
+&lt;h5&gt;螺丝刀&lt;/h5&gt;
+
+&lt;p&gt;只需要T6和00两个型号（图3）。&lt;/p&gt;
+
+&lt;h4&gt;Step 3 拆拆拆！&lt;/h4&gt;
+
+&lt;p&gt;最激动人心的时刻到了！沐浴更衣之后，开拆！记得一定要关机！！！&lt;/p&gt;
+
+&lt;p&gt;（从左到右：螺丝刀，托盘，SSD硬盘，内存）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;开盖&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;先打开后盖，这里面螺丝长短不一样，可以放到各自对应的位置，右上三个是长螺丝。打开后不得不赞叹一下苹果的工艺，非常紧凑、高效美观。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;strong&gt;断电&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;进行下面操作前要先把这个位置电池给主板的供电线拔掉，不要带电操作。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;strong&gt;换内存&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;内存两侧有个塑料卡子，轻轻一掰内存就能出来，然后照原样把新的内存插回去。在插上面一条的时候轻轻向下（而不是平推）会容易一些。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;strong&gt;换硬盘&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;硬盘上下有四个黑色螺丝固定，依次拧下。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;把左侧固定的数据线拔下。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;把硬盘左右四个螺丝拧到新买的SSD上，再照原样给SSD安上数据线，固定回去。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;strong&gt;把原来的硬盘换到光驱位置&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;光驱这个年头是越来越没有什么用了，新出的笔记本也大多数放弃了光驱。不过老Mac也正因为有光驱，才给升级带来了更多的可能。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;这一步比较麻烦，因为光驱上面有一些数据线，拿出光驱前先要拔掉右侧三组数据线（右边最大的三个方框）。然后再去掉两组数据线的螺丝(上侧2个)和三组光驱螺丝。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;把电脑原来的硬盘放到买的托盘里，上好螺丝。再装回光驱位置。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;至此，大功告成，欣赏一下胜利的果实。&lt;/p&gt;
+
+&lt;p&gt;合上后盖，装系统吧。插上做好的启动盘，开机，按option，从U盘启动，格式化一下新的硬盘，装上系统和软件&lt;a href=&quot;%E4%B9%8B%E5%89%8D%E5%BE%88%E5%A4%9A%E4%BA%BA%E6%8F%90%E5%88%B0Yosemite%E4%B8%8D%E5%85%BC%E5%AE%B9%E8%AE%B8%E5%A4%9A%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%86%E7%8E%B0%E5%9C%A8Yosemite%E6%AD%A3%E5%BC%8F%E7%89%88%E5%87%BA%E6%9D%A5%E6%9C%89%E5%8D%8A%E5%B9%B4%E4%BA%86%EF%BC%8C%E8%AE%BE%E8%AE%A1%E6%96%B9%E9%9D%A2%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%E9%83%BD%E6%B2%A1%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%E3%80%82AutoCAD%E9%9C%80%E8%A6%81%E7%94%A82015%E7%89%88%EF%BC%8C%E5%AD%A6%E7%94%9F%E5%8F%AF%E4%BB%A5%E5%85%8D%E8%B4%B9%E7%94%A8%E4%B8%89%E5%B9%B4%EF%BC%9BAdobe%E7%B3%BB%E5%88%97%E8%AF%95%E8%BF%87CS5%E5%92%8C6%E9%83%BD%E6%B2%A1%E6%9C%89%E9%97%AE%E9%A2%98%EF%BC%8C%E5%85%B6%E5%AE%83%E8%BF%98%E8%AF%95%E8%BF%87QGIS2.8;R;Python%E9%83%BD%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8C%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AAMac%E7%8A%B6%E6%80%81%E7%9B%91%E6%8E%A7%E8%BD%AF%E4%BB%B6iStat%E9%9C%80%E8%A6%81%E5%8D%87%E7%BA%A7%E5%88%B0%E6%9C%80%E8%BF%91%E7%89%88%E6%9C%AC%E3%80%82&quot;&gt;^2&lt;/a&gt;。享受秒开Photoshop的感觉吧！&lt;/p&gt;
+
+&lt;p&gt;试用了两天，有种新买了台电脑的感觉。只可惜，大好的春假就献给了它。&lt;/p&gt;
+
+&lt;p&gt;总共装进去了一块SSD硬盘，两条内存，一个硬盘托，拿出来了一个光驱，两条内存（2GX2）。这两条内存水果君准备放到自己第一个笔记本上，换下原来的1GX2的内存，再买个64G的SSD换上去，又能拯救一台古董机。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Data for Development | 手机数据与城市发展</title>
@@ -827,77 +946,6 @@ plt.show()
 &lt;p&gt;&lt;img src=&quot;/media/files/2014/09/figure4.png&quot; alt=&quot;figure4&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;是不是很像呢？data这个list里存的就是点的真实坐标了，因为有些Cluster这种简单的方法识别还是不太好，可以进一步处理，点不多的情况下也可以在之前PS的时候调整好。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Grapefruit | 买柚子风波</title>
-   <link href="http://donglei.name/2014/08/grapefruit.html"/>
-   <updated>2014-08-14T00:00:00-04:00</updated>
-   <id>http://donglei.name/2014/08/grapefruit</id>
-   <content type="html">&lt;p&gt;半年多前在人人上写了个小文，现在准备把之前写的东西好玩的，有存档必要的，逐步迁移到博客上。去社交化，Oh YEAR～&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;今天买柚子的故事很是值得记上一笔。&lt;/p&gt;
-
-&lt;p&gt;平时买水果都去照澜院，价格虽然高了点，但吃着比较放心。 今天回宿舍时不知哪根筋错位，刚好路过西区浴室边的水果店，决定在此买点水果，称了一个柚子、几个橙子和香蕉，就是这只柚子引出了后面的波折。&lt;/p&gt;
-
-&lt;p&gt;当时光线比较暗，我随便拿了一个，回到宿舍切开一吃，发现有小四分之一特别特别苦涩。平时柚子也常吃，但像这次苦到没法吃还直没遇到过，看了一眼这块的柚子皮，发现可能跌过。给平时苦就苦吧，大不了不吃了，但怪就怪今天回宿舍早，鬼使神差地拿起柚子下楼去跟老板换。以下为对话部分：&lt;/p&gt;
-
-&lt;p&gt;“老板，这个柚子有点问题，这块可能坏了，特别苦，能给换一个么。”&lt;/p&gt;
-
-&lt;p&gt;“苦是正常的，苦不给换，坏了才能换。”&lt;/p&gt;
-
-&lt;p&gt;“啥样的算坏的？”&lt;/p&gt;
-
-&lt;p&gt;老板从桌子下面拿出一个长了毛的都看不出是否是柚子的东西，说：“这样的是坏的。”&lt;/p&gt;
-
-&lt;p&gt;我：“这样明显看出坏的人们也不会买啊。”&lt;/p&gt;
-
-&lt;p&gt;老板：“柚子就是苦，苦才去火，苦瓜为啥去火，就是因为苦。有的人还喜欢吃苦的呢。”&lt;/p&gt;
-
-&lt;p&gt;我：“要不我们让别的人尝尝看是不是有问题。” 我拉了一个想买柚子的同学A，同学A吃完说苦，没买，骑车离开。&lt;/p&gt;
-
-&lt;p&gt;我：“你看，这个同学也说苦，都没买。”&lt;/p&gt;
-
-&lt;p&gt;老板：“那个同学是说苦，但没说坏了啊。你们这代人就是自私，不为别人着想，要是我，吃到这种情况，肯定不找人家换。我们挣钱容易么。”&lt;/p&gt;
-
-&lt;p&gt;我：“我买个柚子，就质量说质量，与我们这代人有什么关系？” 我拉了个同学B，同学B说确实比平时的苦。&lt;/p&gt;
-
-&lt;p&gt;我：“你看，又一个同学说苦。”&lt;/p&gt;
-
-&lt;p&gt;老板：“这个同学是说苦，但没说坏了啊，药还是苦的呢，你不也得吃啊。”&lt;/p&gt;
-
-&lt;p&gt;我：“我想换一个。”&lt;/p&gt;
-
-&lt;p&gt;老板：“我给你换了，谁给我换啊。给你两块钱，算我赔，把苦切了拿回去吃吧。”&lt;/p&gt;
-
-&lt;p&gt;我：“我想换一个。” 我又拉了个同学C，同学C说确实苦，建议老板想个折中的办法。&lt;/p&gt;
-
-&lt;p&gt;我：“这样吧，你给我再拿一个柚子，如果不是特别苦，我还付钱拿走。”&lt;/p&gt;
-
-&lt;p&gt;老板：“我可没有那个把握，万一苦的，我不就赔了。”&lt;/p&gt;
-
-&lt;p&gt;最后在我再三坚持下切了一个，没问题，我付了钱。话题又回到买的第一个柚子。&lt;/p&gt;
-
-&lt;p&gt;我：“老板，如果我买了一袋苹果，里面有一个坏的，给换不给换？&quot;&lt;/p&gt;
-
-&lt;p&gt;老板：“如果是我，我就不去找别人换。”&lt;/p&gt;
-
-&lt;p&gt;我：“我买了一袋，吃出一个苹果里面坏了，你给不给换？”&lt;/p&gt;
-
-&lt;p&gt;老板：“一袋苹果里面有一个坏了不很正常么，你找谁谁给你换？”&lt;/p&gt;
-
-&lt;p&gt;我：“如果有好几个芯儿有问题呢。”&lt;/p&gt;
-
-&lt;p&gt;老板：“你都吃到芯儿了谁还给你换？让我我就吃了，你们这代人没吃过苦。”&lt;/p&gt;
-
-&lt;p&gt;我：“就是说吃到坏的算自己倒霉是么？”&lt;/p&gt;
-
-&lt;p&gt;老板：“你买的柚子，说什么苹果。”&lt;/p&gt;
-
-&lt;p&gt;我：。。。。。。&lt;/p&gt;
 </content>
  </entry>
  
