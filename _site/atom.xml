@@ -4,7 +4,7 @@
  <title>DongLei's Blog</title>
  <link href="http://donglei.name/atom.xml" rel="self"/>
  <link href="http://donglei.name"/>
- <updated>2015-01-19T13:53:17-05:00</updated>
+ <updated>2015-04-02T21:11:15-04:00</updated>
  <id>http://donglei.name</id>
  <author>
    <name>donglei</name>
@@ -13,9 +13,9 @@
  
  <entry>
    <title>Data for Development | 手机数据与城市发展</title>
-   <link href="http://donglei.name/2015/01/d4d.html"/>
-   <updated>2015-01-20T00:00:00-05:00</updated>
-   <id>http://donglei.name/2015/01/d4d</id>
+   <link href="http://donglei.name/2015/03/d4d.html"/>
+   <updated>2015-03-20T00:00:00-04:00</updated>
+   <id>http://donglei.name/2015/03/d4d</id>
    <content type="html">&lt;p&gt;睿琪、张江老师和我参加了一次Orange公司组织的数据竞赛（D4D Challenge），竞赛内容也是NetMob15会议的一部分（今年的会议由MIT Media Lab主办，时间是3月底4月初）。我们利用Orange提供的Senegal的手机数据，结合OpenStreetMap的路网数据，对城市的动态人口分布，职住情况，交通效率等进行了分析。通过数据识别出了城市中基础设施（路网）与人口分布不匹配的区域，同时也构建了一个城市交通效率的指标，这些都可以为以后的城市规划决策提供更加科学、定量的依据。&lt;/p&gt;
 
 &lt;p&gt;更多的内容会在会议结果公布后更新。&lt;a href=&quot;http://www.d4d.orange.com/en/home&quot;&gt;http://www.d4d.orange.com/en/home&lt;/a&gt;&lt;/p&gt;
@@ -30,6 +30,27 @@ Above all, the traffic flow patterns, &#39;hotspots&#39; and mismatched region
 &lt;p&gt;&lt;img src=&quot;/media/files/2015/01/figure3DayNightPop.png&quot; alt=&quot;figure3&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;More information will be updated after the conference. &lt;a href=&quot;http://www.d4d.orange.com/en/home&quot;&gt;http://www.d4d.orange.com/en/home&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Python rtree install | Python中Rtree配置问题</title>
+   <link href="http://donglei.name/2015/02/python-rtree.html"/>
+   <updated>2015-02-14T00:00:00-05:00</updated>
+   <id>http://donglei.name/2015/02/python-rtree</id>
+   <content type="html">&lt;p&gt;最近老是遇到配置Python环境的问题，特别是遇到一些小众一点的包，并没有包括在一些IDE里，所以得各种自己搞。这里写几个常用的方法，主要当做备忘录。&lt;/p&gt;
+
+&lt;p&gt;在做空间计算的时候，即便用了numpy，scipy，虽然对于矩阵运算有了很大的提高。但是并没有对类型地理空间数据进行优化，一般要用一个Rtree的算法来减小索引次数，这个算法在Python中有个对应的包。但Rtree需要先装一个叫libspatialindex的包，具体可以去&lt;a href=&quot;http://libspatialindex.github.io/install.html&quot;&gt;这里下载安装&lt;/a&gt;，有种更简单的办法是用&lt;strong&gt;brew&lt;/strong&gt;来装。只用一行命令：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;brew install spatialindex&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;然后去&lt;a href=&quot;https://pypi.python.org/pypi/Rtree/0.8.2&quot;&gt;这儿把Rtree下载下来&lt;/a&gt;，找到相应目录后安装一下：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;python setup.py install&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;用Brew和Pip这两个工具安装管理个种包还是比较方便的，自己的感觉是安一个IDE，相当于把主流的包都装上，然后再用Brew和Pip安一些自己可能用到但又没有那么常用的包。不过装IDE之后有的会修改默认的Python路径，改成自己的，但卸载后并不会删除这个路径，会导致Python出错，如果有类似的情况，把出错信息Google一下一般会有答案。一般是把~/.bash_profile中的IDE注释掉就行了。&lt;/p&gt;
+
+&lt;p&gt;找到一个链接，对于怎么配置说得比较明白：http://matrix.windhunter.net/blog/2012/01/setup-python-env-on-lion-471.html&lt;/p&gt;
 </content>
  </entry>
  
@@ -877,62 +898,6 @@ plt.show()
 &lt;p&gt;老板：“你买的柚子，说什么苹果。”&lt;/p&gt;
 
 &lt;p&gt;我：。。。。。。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Doves | 梁朝伟喂鸽子</title>
-   <link href="http://donglei.name/2014/08/doves.html"/>
-   <updated>2014-08-13T00:00:00-04:00</updated>
-   <id>http://donglei.name/2014/08/doves</id>
-   <content type="html">&lt;p&gt;最近有个好玩儿的事情，起因是这样的。网上有许多“恶搞”物理题目表述，比如这个：&lt;/p&gt;
-
-&lt;p&gt;在一个烟雨蒙蒙的清晨，你站在窗前，感慨万千,曾经失落过，但一切的曾经代替不了现在的行走，活在当下，曾经终究不是未来，水一滴一滴从屋檐自由落下，你的思绪也随它荡漾开来，突然发现当它通过屋檐下高为1.4m的窗户时，用时0.2s，空气阻力不计，取g=10m/s2。求此窗户离屋檐的距离。&lt;/p&gt;
-
-&lt;p&gt;我给Z同学出了几个后，被其反问了一个很有趣的问题：&lt;/p&gt;
-
-&lt;p&gt;梁朝伟在伦敦喂鸽子，每头喂一个面包屑就会有两只鸽子争抢，抢到的概率均等。假设广场上有100只鸽子，每只鸽子吃一片面包屑需要一秒钟，累计吃十片面包屑就吃饱飞走了，没吃到的会一直抢，直到吃饱为止，但如果累计10次没抢到就累觉不爱飞走了。问梁朝伟需要至少准备多少面包屑，才能保证观看鸽子吃食的时间最长。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;理想情况下，100只鸽子各吃到9片，抢但没吃到9次，这时梁朝伟投喂了900片，接下来，每头喂一次就会有一直吃饱飞走，一只累计10次没吃到飞走，也就是在投喂50次就够了，共计950片。不过实际情况肯定要比这个少。&lt;/p&gt;
-
-&lt;p&gt;不知道大家想没想到如何求解析解，我目前还没解出来，不过拿Python写了个小脚本求了下数值解，大概830-850多片就够了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    #!/usr/bin/env python
-&quot;&quot;&quot;
-Simulation of the dove model
-&quot;&quot;&quot;
-# -*- coding: utf-8 -*-
-
-import random
-
-doves = {}
-alpha = 10
-
-for i in range(100):
-        doves[i] = [0,0] #每个鸽子有一个list，第一个存吃的次数，每二个存没抢到的次数
-
-t = 1
-
-while t &amp;lt; 10000 and len(doves) &amp;gt;= 2:
-        a = random.sample(doves,2) #从dove中选两只出来
-
-        doves[a[0]][0] += 1 #第一只得到吃的
-        doves[a[1]][1] += 1 #第二只没得到吃的
-
-        t += 1
-
-    #如果一只鸽子累计得到10次或者没得到10次，就从总的中删除
-        if doves[a[0]][0] &amp;gt;= alpha:
-            del doves[a[0]]
-
-        if doves[a[1]][1] &amp;gt;= alpha:
-            del doves[a[1]]
-
-print &quot;The total time is:&quot;, t 
-print &quot;The last dove is:&quot;, doves
-&lt;/code&gt;&lt;/pre&gt;
 </content>
  </entry>
  
