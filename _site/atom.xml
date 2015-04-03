@@ -4,12 +4,88 @@
  <title>DongLei's Blog</title>
  <link href="http://donglei.name/atom.xml" rel="self"/>
  <link href="http://donglei.name"/>
- <updated>2015-04-02T22:11:10-04:00</updated>
+ <updated>2015-04-02T22:43:44-04:00</updated>
  <id>http://donglei.name</id>
  <author>
    <name>donglei</name>
  </author>
 
+ 
+ <entry>
+   <title>Mac Install Jekyll | Mac安装Jekyll配置Github</title>
+   <link href="http://donglei.name/2015/04/jekyll.html"/>
+   <updated>2015-04-02T00:00:00-04:00</updated>
+   <id>http://donglei.name/2015/04/jekyll</id>
+   <content type="html">&lt;p&gt;因为电脑硬件换了，所以之前本地配置好的Jekyll什么的都没有了，需要再搞一遍，但&lt;a href=&quot;http://jekyllrb.com/docs/installation/&quot;&gt;官网上给出的安装说明&lt;/a&gt;实在太过简单，十有八九是安装不上的。在这里把“艰辛”的重装过程存个档。&lt;/p&gt;
+
+&lt;h3&gt;Step 1: 安装Ruby 2.1&lt;/h3&gt;
+
+&lt;p&gt;OSX 我升级到Yosemite之后自带的是2.0版本的Ruby，Jekyll安装需要2.1以上才行，在Terminal里查看Ruby版本的命令是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ruby -v
+
+ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在安装Ruby之前需要先装好Xcode（Apple Store有下载，安装包很大），并且在Terminal中装好command line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我看网上都推荐两个常用工具来安装管理这些开发环境，一个是Homebrew，安装方法如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;另一个是rvm，可以管理Ruby的版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\curl -sSL https://get.rvm.io | bash -s stable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;需要说明的是，如果从老系统升级到Yosemite的话，装过Homebrew和MacTex Live的电脑升级过程会非常慢。&lt;/p&gt;
+
+&lt;p&gt;装完rvm可以查看下需要的安装文件，及有没有什么问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rvm requirements
+
+brew doctor
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;不管有没有什么问题，都可以先试试直接开始装，不行再回头Google&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rvm install 2.1.2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要换回2.0.0，只需要输入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rvm use 2.0.0 --default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Step 2: 安装Jekyll&lt;/h3&gt;
+
+&lt;p&gt;这步非常简单&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Step 3: 配置Github&lt;/h3&gt;
+
+&lt;p&gt;基本思路是要把Github上之前的东西同步回来，涉及到设ssh密钥等一系列过程，官网给出了&lt;a href=&quot;https://help.github.com/categories/bootcamp/&quot;&gt;不错的讲解&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;这里我遇到了一个小问题是，之前用Github的桌面端把Blog文件下载下来了，所以需要关联一下这个文件和远程的Github账号：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add Your_Files https://github.com/Your_Blog_Link
+
+git push blog master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输一下Github的用户名，密码就行了。以后还是需要多为开源社区做贡献啊！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;https://help.github.com/articles/error-permission-denied-publickey/&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Mac Update SSD and Ram | Mac硬盘内存升级攻略</title>
@@ -851,145 +927,6 @@ plt.show()
 &lt;p&gt;技术的兴盛，把我们伺候的舒舒服服，连死后电子账号这种事儿都有人帮你想好了，但我们日常的烦恼似乎并未消减。所以接下来一年，可能除了科学技术知识学习外，须多观内心，以求不惑。&lt;/p&gt;
 
 &lt;p&gt;2014年9月25日，和菜头微信上写了篇名叫《博客之死》的文章，列举了博客的死因：网民选择变多，值得看的博客少，没有占据入口，不能直接变现。刀刀致命，但我决定继续写下去。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Raw Data from Figures | 从图片中提取数据</title>
-   <link href="http://donglei.name/2014/09/raw-data-from-figures.html"/>
-   <updated>2014-09-05T00:00:00-04:00</updated>
-   <id>http://donglei.name/2014/09/raw-data-from-figures</id>
-   <content type="html">&lt;p&gt;有时候我们经常会在文献中看到许多图表，特别是一些表示两个变量关系的散点图，但作者往往不一定提供原始数据，我们当然可以想办法联系作者获取原始数据，但有时候这样不但成功率不高，而且像一些早年的文献，可能作者无法联系，甚至原始数据已经无法获得了。&lt;/p&gt;
-
-&lt;p&gt;那么有什么办法么？今天看到Wu Lingfei写了一个文章，讲“摄影法”求原始数据，说白了就是拍（或扫描）一张无透视的图片，稍加处理便可得到其相对准确的原始数据。我在这里改良了一下原始方法，发挥建院同学的优势，可以前期用PS辅助处理一下，以增加准确度。&lt;/p&gt;
-
-&lt;h3&gt;STEP 1：拍照&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/files/2014/09/figure0.jpg&quot; alt=&quot;figure0&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是原文作者用手机拍的一张照片，虽然说手机也可以有不错的拍照效果，但难免会有透视，而且数据点清晰度低的话可能会影响后一步处理，如果可能的话建立试试扫描仪。&lt;/p&gt;
-
-&lt;h3&gt;STEP 2：预处理&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/files/2014/09/figure1.png&quot; alt=&quot;figure1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;将图片在PS里先剪裁一下，大小需要正好剪裁到坐标轴边框；接着调整成阈值模式，再进一步其实可以单独用画笔点一下数据点，因为“粘连”在一起的数据点到后面计算机是没法分开的。&lt;/p&gt;
-
-&lt;p&gt;下面的工作就交给计算机啦。&lt;/p&gt;
-
-&lt;h3&gt;STEP 3：用Python的包识别出点的组团&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
-import numpy as np #数组
-import matplotlib.pyplot as plt #画图
-from scipy import ndimage #核心！图片处理
-from scipy.ndimage import measurements
-
-j = ndimage.imread(&quot;/Users/mac/Desktop/figure1.jpg&quot;)
-#j是一个y行，x列的array
-b = ndimage.gaussian_filter(j,4)
-#用高斯法处理图片，得到点的cluster
-c,d = ndimage.label(b&amp;lt;50)
-#给cluster打上标签，后面b的值是个阈值，可调节
-im = plt.imshow(c)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/files/2014/09/figure2.png&quot; alt=&quot;figure2&quot; /&gt;&lt;/p&gt;
-
-&lt;h3&gt;STEP 4：画出所有Cluster，并存下中心点的数据&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
-import numpy as np #数组
-import matplotlib.pyplot as plt #画图
-from scipy import ndimage #核心！图片处理
-from scipy.ndimage import measurements
-
-j = ndimage.imread(&quot;/Users/mac/Desktop/figure1.jpg&quot;)
-#j是一个y行，x列的array
-b = ndimage.gaussian_filter(j,4)
-#用高斯法处理图片，得到点的cluster
-c,d = ndimage.label(b&amp;lt;50)
-#给cluster打上标签，后面b的值是个阈值，可调节
-
-sliced = measurements.find_objects(c)
-#Find objects in a labeled array. Find points in this example
-
-data=[]
-for i in sliced:
-    sliceX = i[1]
-    sliceY = i[0]
-    #注意，X,Y的坐标是反的
-    x = np.abs(sliceX.stop - sliceX.start)/2 + min(sliceX.stop,sliceX.start) #point center x
-    y = np.abs(sliceY.stop - sliceY.start)/2 + min(sliceY.stop,sliceY.start) #point center y
-    xlim = [0,len(j[0])]
-    ylim = [len(j),0]
-    data.append([x,ylim[0]-y]) #换一下y的坐标
-    plt.plot([sliceX.start, sliceX.start, sliceX.stop, sliceX.stop, sliceX.start], \
-                   [sliceY.start, sliceY.stop, sliceY.stop, sliceY.start, sliceY.start], \
-                   color=&quot;c&quot;)
-
-plt.xlim(xlim)
-plt.ylim(ylim)
-plt.imshow(c)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/files/2014/09/figure3.png&quot; alt=&quot;figure3&quot; /&gt;&lt;/p&gt;
-
-&lt;h3&gt;STEP 5：对数据结合原坐标轴进行变换，得到真实数据&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
-import numpy as np #数组
-import matplotlib.pyplot as plt #画图
-from scipy import ndimage #核心！图片处理
-from scipy.ndimage import measurements
-
-j = ndimage.imread(&quot;/Users/mac/Desktop/figure1.jpg&quot;)
-#j是一个y行，x列的array
-b = ndimage.gaussian_filter(j,4)
-#用高斯法处理图片，得到点的cluster
-c,d = ndimage.label(b&amp;lt;50)
-#给cluster打上标签，后面b的值是个阈值，可调节
-
-sliced = measurements.find_objects(c)
-#Find objects in a labeled array. Find points in this example
-
-data=[]
-for i in sliced:
-    sliceX = i[1]
-    sliceY = i[0]
-    #注意，X,Y的坐标是反的
-    x = np.abs(sliceX.stop - sliceX.start)/2 + min(sliceX.stop,sliceX.start) #point center x
-    y = np.abs(sliceY.stop - sliceY.start)/2 + min(sliceY.stop,sliceY.start) #point center y
-    xlim = [0,len(j[0])]
-    ylim = [len(j),0]
-    data.append([x,ylim[0]-y]) #换一下y的坐标
-    plt.plot([sliceX.start, sliceX.start, sliceX.stop, sliceX.stop, sliceX.start], \
-                   [sliceY.start, sliceY.stop, sliceY.stop, sliceY.start, sliceY.start], \
-                   color=&quot;c&quot;)
-
-xlim_org = [0,0.3]
-ylim_org = [1000,3000]
-x = []
-y = []
-#xlim_org,ylim_org是图片上的坐标轴，x,y用来存点的x坐标和y坐标
-
-for k in range(len(data)):
-    data[k][0] *= (0.3/len(j[0]))
-    data[k][1] = data[k][1] * 2000/len(j) + 1000
-    x.append(data[k][0])
-    y.append(data[k][1])
-
-plt.xlim(xlim_org)
-plt.ylim(ylim_org)
-plt.scatter(x, y ,c=&#39;blue&#39;, s=50, alpha=0.8)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/files/2014/09/figure4.png&quot; alt=&quot;figure4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;是不是很像呢？data这个list里存的就是点的真实坐标了，因为有些Cluster这种简单的方法识别还是不太好，可以进一步处理，点不多的情况下也可以在之前PS的时候调整好。&lt;/p&gt;
 </content>
  </entry>
  
