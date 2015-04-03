@@ -142,4 +142,4 @@ Kingston Digital 240GB SSDNow V300 SATA 3 2.5-Inch Solid State Drive with Adapte
 
 1: https://support.apple.com/en-us/HT201372
 
-2: 之前很多人提到Yosemite不兼容许多软件的问题，但现在Yosemite正式版出来有半年了，设计方面常用的软件都没什么问题。AutoCAD需要用2015版，学生可以免费用三年；Adobe系列试过CS5和6都没有问题，其它还试过QGIS2.8;R;Python都没问题，就是一个Mac状态监控软件iStat需要升级到最近版本。
+2: 之前很多人提到Yosemite不兼容许多软件的问题，但现在Yosemite正式版出来有半年了，设计方面常用的软件都没什么问题。AutoCAD需要用2015版，学生可以免费用三年；Adobe系列试过CS5和6都没有问题，其它还试过QGIS2.8, R, Python都没问题，就是一个Mac状态监控软件iStat需要升级到最近版本。
