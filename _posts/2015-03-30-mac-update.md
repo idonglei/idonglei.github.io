@@ -23,7 +23,12 @@ tags:
 
 - 格式化U盘。打开"磁盘工具"，左边选择要格式化的U盘，右边点抹掉，格式选择第一个，名称保持Untitled（这个主要是为了和后面对应）。（如图1）
 
+![figure1](/media/files/2015/03/01.png)
+
 - 打开终端（Terminal，见图2），里面输入如下内容：
+
+![figure2](/media/files/2015/03/02.jpg)
+
 
 >sudo /Applications/Install OS X Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install OS X Yosemite.app --nointeraction
 
@@ -61,9 +66,13 @@ Kingston Digital 240GB SSDNow V300 SATA 3 2.5-Inch Solid State Drive with Adapte
 
 只需要T6和00两个型号（图3）。
 
+![figure5](/media/files/2015/03/05.jpg)
+
 ####Step 3 拆拆拆！
 
 最激动人心的时刻到了！沐浴更衣之后，开拆！记得一定要关机！！！
+
+![figure4](/media/files/2015/03/04.jpg)
 
 （从左到右：螺丝刀，托盘，SSD硬盘，内存）
 
@@ -71,13 +80,22 @@ Kingston Digital 240GB SSDNow V300 SATA 3 2.5-Inch Solid State Drive with Adapte
 
 - 先打开后盖，这里面螺丝长短不一样，可以放到各自对应的位置，右上三个是长螺丝。打开后不得不赞叹一下苹果的工艺，非常紧凑、高效美观。
 
+![figure6](/media/files/2015/03/06.jpg)
+
+
 **断电**
 
 - 进行下面操作前要先把这个位置电池给主板的供电线拔掉，不要带电操作。
 
+![figure7](/media/files/2015/03/07.jpg)
+
+
 **换内存**
 
 - 内存两侧有个塑料卡子，轻轻一掰内存就能出来，然后照原样把新的内存插回去。在插上面一条的时候轻轻向下（而不是平推）会容易一些。
+
+![figure8](/media/files/2015/03/08.jpg)
+
 
 **换硬盘**
 
@@ -87,15 +105,32 @@ Kingston Digital 240GB SSDNow V300 SATA 3 2.5-Inch Solid State Drive with Adapte
 
 - 把硬盘左右四个螺丝拧到新买的SSD上，再照原样给SSD安上数据线，固定回去。
 
+![figure09](/media/files/2015/03/09.jpg)
+
+![figure10](/media/files/2015/03/10.jpg)
+
+![figure11](/media/files/2015/03/11.jpg)
+
+
 **把原来的硬盘换到光驱位置**
 
 - 光驱这个年头是越来越没有什么用了，新出的笔记本也大多数放弃了光驱。不过老Mac也正因为有光驱，才给升级带来了更多的可能。
 
 - 这一步比较麻烦，因为光驱上面有一些数据线，拿出光驱前先要拔掉右侧三组数据线（右边最大的三个方框）。然后再去掉两组数据线的螺丝(上侧2个)和三组光驱螺丝。
 
+![figure12](/media/files/2015/03/12.jpg)
+
 - 把电脑原来的硬盘放到买的托盘里，上好螺丝。再装回光驱位置。
 
+![figure13](/media/files/2015/03/13.jpg)
+
+![figure14](/media/files/2015/03/14.jpg)
+
+![figure15](/media/files/2015/03/15.jpg)
+
 至此，大功告成，欣赏一下胜利的果实。
+
+![figure16](/media/files/2015/03/16.jpg)
 
 合上后盖，装系统吧。插上做好的启动盘，开机，按option，从U盘启动，格式化一下新的硬盘，装上系统和软件[^2]。享受秒开Photoshop的感觉吧！
 
@@ -103,6 +138,8 @@ Kingston Digital 240GB SSDNow V300 SATA 3 2.5-Inch Solid State Drive with Adapte
 
 总共装进去了一块SSD硬盘，两条内存，一个硬盘托，拿出来了一个光驱，两条内存（2GX2）。这两条内存水果君准备放到自己第一个笔记本上，换下原来的1GX2的内存，再买个64G的SSD换上去，又能拯救一台古董机。
 
+***
 
-[^1]:https://support.apple.com/en-us/HT201372
-[^2]:之前很多人提到Yosemite不兼容许多软件的问题，但现在Yosemite正式版出来有半年了，设计方面常用的软件都没什么问题。AutoCAD需要用2015版，学生可以免费用三年；Adobe系列试过CS5和6都没有问题，其它还试过QGIS2.8;R;Python都没问题，就是一个Mac状态监控软件iStat需要升级到最近版本。
+1: https://support.apple.com/en-us/HT201372
+
+2: 之前很多人提到Yosemite不兼容许多软件的问题，但现在Yosemite正式版出来有半年了，设计方面常用的软件都没什么问题。AutoCAD需要用2015版，学生可以免费用三年；Adobe系列试过CS5和6都没有问题，其它还试过QGIS2.8;R;Python都没问题，就是一个Mac状态监控软件iStat需要升级到最近版本。
