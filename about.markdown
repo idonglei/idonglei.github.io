@@ -6,6 +6,7 @@ layout: page
 Dong Lei | 董磊
 
 > 2011-now | Ph.D. Candidate | School of Architecture | Tsinghua University.
+> 
 > 2015.01-2015.06 | Visiting Ph.D. Student | Graduate School of Design | Harvard University.  
 > 2008-2012 | B.E. | School of Economics and Management | Tsinghua University.  
 > 2007-2011 | B.A. | School of Architecture | Tsinghua University.  
